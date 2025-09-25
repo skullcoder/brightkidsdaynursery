@@ -5957,18 +5957,73 @@
     const leftBtn = document.getElementById('leftBtn');
     const rightBtn = document.getElementById('rightBtn');
 
+    // Function to convert tab text to URL-friendly hash
+    function textToHash(text) {
+      return text
+        .toLowerCase()
+        .replace(/[^a-z0-9\s]/g, '') // Remove special characters except spaces
+        .replace(/\s+/g, '') // Remove spaces
+        .trim();
+    }
+
+    // Function to switch to a specific tab
+    function switchToTab(tabElement) {
+      tabs.forEach(t => t.classList.remove('active'));
+      contents.forEach(c => c.classList.remove('active'));
+
+      tabElement.classList.add('active');
+      document.getElementById(tabElement.dataset.tab).classList.add('active');
+
+      // Scroll the active tab into view
+      tabElement.scrollIntoView({behavior: 'smooth', inline: 'center'});
+    }
+
     // Tab switching
     tabs.forEach(tab => {
       tab.addEventListener('click', () => {
-        tabs.forEach(t => t.classList.remove('active'));
-        contents.forEach(c => c.classList.remove('active'));
-
-        tab.classList.add('active');
-        document.getElementById(tab.dataset.tab).classList.add('active');
-
-        tab.scrollIntoView({behavior: 'smooth', inline: 'center'});
+        // Create URL-friendly hash from tab text
+        const tabText = tab.textContent.trim();
+        const hash = textToHash(tabText);
+        
+        // Update URL hash
+        window.location.hash = hash;
+        
+        // Switch to the tab
+        switchToTab(tab);
       });
     });
+
+    // Function to handle URL hash changes
+    function handleHashChange() {
+      const hash = window.location.hash.substring(1); // Remove the # symbol
+      if (hash) {
+        // Find tab by matching the hash with the tab text
+        let targetTab = null;
+        tabs.forEach(tab => {
+          const tabText = tab.textContent.trim();
+          const tabHash = textToHash(tabText);
+          if (tabHash === hash) {
+            targetTab = tab;
+          }
+        });
+        
+        if (targetTab) {
+          switchToTab(targetTab);
+        } else {
+          // If no matching tab found, activate the first tab
+          switchToTab(tabs[0]);
+        }
+      } else {
+        // If no hash, activate the first tab
+        switchToTab(tabs[0]);
+      }
+    }
+
+    // Handle initial page load
+    handleHashChange();
+
+    // Listen for hash changes (back/forward buttons)
+    window.addEventListener('hashchange', handleHashChange);
 
     // Scroll buttons
     leftBtn.addEventListener('click', () => {
