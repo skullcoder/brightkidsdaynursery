@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Policy Documents</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    header img {
+      max-width: 180px;
+      height: auto;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    /* Tab Navigation Wrapper */
+    .tabs-wrapper {
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+
+    .header-info {
+      line-height: 24px;
+    }
+
+    .scroll-btn {
+      background: #fff;
+      border: 1px solid #ddd;
+      padding: 6px 10px;
+      cursor: pointer;
+      font-size: 18px;
+      border-radius: 4px;
+      margin: 0 5px;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+      transition: 0.3s;
+    }
+
+    .scroll-btn:hover {
+      background: #f0f0f0;
+    }
+
+    .tabs {
+      display: flex;
+      overflow-x: auto;
+      white-space: nowrap;
+      border-bottom: 2px solid #ddd;
+      scrollbar-width: none;
+      /* Hide scrollbar Firefox */
+      -ms-overflow-style: none;
+      /* IE */
+      flex: 1;
+    }
+
+    .tabs::-webkit-scrollbar {
+      display: none;
+      /* Hide scrollbar Chrome/Safari */
+    }
+
+    .tab {
+      flex: 0 0 auto;
+      padding: 10px 20px;
+      cursor: pointer;
+      border: none;
+      background: transparent;
+      font-size: 15px;
+      transition: 0.3s;
+    }
+
+    .tab:hover {
+      background: #f0f0f0;
+    }
+
+    .tab.active {
+      border-bottom: 3px solid #007bff;
+      font-weight: bold;
+      color: #007bff;
+    }
+
+    /* Tab Content */
+    .tab-content {
+      display: none;
+      padding: 20px;
+      background: #fff;
+      margin-top: 10px;
+      border-radius: 6px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    li {
+      margin: 10px 0px;
+      line-height: 25px;
+    }
+
+    .horizontal {
+      display: flex;
+      gap: 50px;
+    }
+
+    p {
+      line-height: 27px;
+    }
+
+    p.text-underline {
+      text-decoration: underline;
+      line-height: 19px;
+    }
+
+    .redborder {
+      padding: 20px;
+      color: red;
+      border: 1px solid red;
+      border-radius: 20px;
+    }
+
+    .section-title {
+      font-weight: bold;
+      margin-top: 25px;
+      text-decoration: underline;
+    }
+
+    .policy-section {
+      margin-top: 25px;
+      margin-bottom: 25px;
+      padding: 20px;
+      background-color: #f8f9fa;
+      border-radius: 8px;
+      border-left: 4px solid #3498db;
+    }
+
+    .procedures-section {
+      margin-top: 30px;
+      padding: 20px;
+      background-color: #e8f4fc;
+      border-radius: 8px;
+    }
+
+    .highlight {
+      background-color: #fffde7;
+      padding: 2px 5px;
+      border-radius: 3px;
+      font-weight: bold;
+    }
+
+    .page-break {
+      margin-top: 40px;
+      border-top: 1px dashed #ccc;
+      padding-top: 30px;
+    }
+
+    .review-info {
+      margin-top: 40px;
+      padding: 20px;
+      background-color: #f1f8e9;
+      border-radius: 8px;
+      border-left: 4px solid #7cb342;
+    }
+
+    .references {
+      margin-top: 30px;
+      padding: 20px;
+      background-color: #f5f5f5;
+      border-radius: 8px;
+    }
+
+    .policy-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .provider-name {
+      font-weight: bold;
+      font-size: 1.2em;
+      color: #2c3e50;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    table,
+    th,
+    td {
+      border: 1px solid #333;
+    }
+
+    th,
+    td {
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    .footer {
+      margin-top: 40px;
+      border-top: 1px solid #999;
+      padding-top: 15px;
+      font-size: 0.9em;
+      color: #444;
+    }
+
+    .signature-block {
+      margin-top: 30px;
+    }
+
+    .signature-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .signature-table td {
+      padding: 10px;
+      border: 1px solid #ccc;
+      vertical-align: top;
+    }
+
+    .signature-table td:first-child {
+      background-color: #f9f9f9;
+      font-weight: bold;
+      width: 30%;
+    }
+
+    .update-info {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #fff3e0;
+      border-radius: 5px;
+      text-align: center;
+      font-style: italic;
+    }
+
+    @media (max-width: 768px) {
+      .tab {
+        font-size: 14px;
+        padding: 8px 14px;
+      }
+
+      header img {
+        max-width: 140px;
+      }
+
+      .scroll-btn {
+        font-size: 16px;
+        padding: 4px 8px;
+      }
+
+      .container {
+        padding: 10px;
+      }
+
+      .tab-content {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <img
+        src="https://ik.imagekit.io/Brightkidsdaynursery/WhatsApp%20Image%202025-09-19%20at%2018.12.08.jpeg?updatedAt=1758376250662"
+        alt="Company Logo">
+    </header>
+
+    <h1>Policy Documents</h1>
+
+    <!-- Tabs with Arrows -->
+    <div class="tabs-wrapper">
+      <button class="scroll-btn" id="leftBtn">&#9664;</button>
+      <div class="tabs" id="tabs">
+        <button class="tab active" data-tab="policy1">Absence procedure</button>
+        <button class="tab" data-tab="policy2">Behaviour management – Guidelines for dealing with challenging behaviour. Including behaviour and biting logs.</button>
+        <button class="tab" data-tab="policy3">Child protection</button>
+        <button class="tab" data-tab="policy4">Fire safety policy</button>
+        <button class="tab" data-tab="policy5">Mobile phone policy</button>
+        <button class="tab" data-tab="policy6">Health and safety policy</button>
+        <button class="tab" data-tab="policy7">Coronavirus policy</button>
+        <button class="tab" data-tab="policy8">Reporting concerns - safeguarding procedures</button>
+        <button class="tab" data-tab="policy9">Nappy changing policy</button>
+      </div>
+      <button class="scroll-btn" id="rightBtn">&#9654;</button>
+    </div>
+
+    <!-- Tab Contents -->
+    <div class="tab-content active" id="policy1">
+      <h1>Absence Procedure Policy</h1>
+
+      <div class="header-info">
+        <strong>Bright Kids Day Nursery Ltd / Bright Kids Hackney Ltd</strong><br>
+        Adopted: [Date] | To be reviewed: [Date]
+      </div>
+
+      <div class="policy-section">
+        <h2>Policy Statement</h2>
+        <p>This policy outlines the procedures for managing staff and child absences to ensure continuity of care and maintain high standards of service delivery.</p>
+      </div>
+
+      <div class="policy-section">
+        <h2>Staff Absence Procedures</h2>
+        <h3>Reporting Absence</h3>
+        <ul>
+          <li>Staff must report absence as soon as possible, preferably before the start of their shift</li>
+          <li>Contact the manager directly on [phone number]</li>
+          <li>Provide reason for absence and expected duration</li>
+          <li>Follow up with written confirmation within 24 hours</li>
+        </ul>
+
+        <h3>Cover Arrangements</h3>
+        <ul>
+          <li>Manager will arrange appropriate cover for absent staff</li>
+          <li>Maintain required staff-to-child ratios at all times</li>
+          <li>Use qualified agency staff when necessary</li>
+          <li>Document all cover arrangements</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2>Child Absence Procedures</h2>
+        <h3>Parent Notification</h3>
+        <ul>
+          <li>Parents must notify the nursery of child absence by 9:00 AM</li>
+          <li>Provide reason for absence</li>
+          <li>Inform of expected return date</li>
+        </ul>
+
+        <h3>Record Keeping</h3>
+        <ul>
+          <li>Record all absences in the attendance register</li>
+          <li>Note reason for absence</li>
+          <li>Monitor patterns of absence</li>
+          <li>Follow up on unexplained absences</li>
+        </ul>
+      </div>
+
+      <div class="footer">
+        <div class="signature-block">
+          <table class="signature-table">
+            <tr>
+              <td>This policy was adopted by</td>
+              <td>Bright Kids Day Nursery Ltd/Bright Kids Hackney Ltd</td>
+            </tr>
+            <tr>
+              <td>Date adopted</td>
+              <td>[Date]</td>
+            </tr>
+            <tr>
+              <td>Date to be reviewed</td>
+              <td>[Date]</td>
+            </tr>
+            <tr>
+              <td>Signed</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Position</td>
+              <td></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="update-info">
+        Updated [Date]
+      </div>
+    </div>
+
+    <div class="tab-content" id="policy2">
+      <h1>Behaviour Management Policy</h1>
+
+      <div class="header-info">
+        <strong>Bright Kids Day Nursery Ltd / Bright Kids Hackney Ltd</strong><br>
+        Adopted: [Date] | To be reviewed: [Date]
+      </div>
+
+      <div class="policy-section">
+        <h2>Policy Statement</h2>
+        <p>This policy provides guidelines for dealing with challenging behaviour in children, including the use of behaviour and biting logs to monitor and address issues effectively.</p>
+      </div>
+
+      <div class="policy-section">
+        <h2>Understanding Challenging Behaviour</h2>
+        <p>Challenging behaviour is any behaviour that interferes with a child's learning, development, or the safety of themselves or others. This may include:</p>
+        <ul>
+          <li>Aggressive behaviour (hitting, biting, kicking)</li>
+          <li>Disruptive behaviour (screaming, throwing objects)</li>
+          <li>Withdrawn behaviour (refusing to participate, isolating themselves)</li>
+          <li>Destructive behaviour (breaking toys, damaging property)</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2>Positive Behaviour Management Strategies</h2>
+        <h3>Prevention</h3>
+        <ul>
+          <li>Create a positive, stimulating environment</li>
+          <li>Establish clear, consistent routines</li>
+          <li>Provide appropriate activities for each child's developmental stage</li>
+          <li>Ensure adequate supervision and support</li>
+        </ul>
+
+        <h3>Intervention</h3>
+        <ul>
+          <li>Use positive reinforcement and praise</li>
+          <li>Redirect attention to appropriate activities</li>
+          <li>Set clear, age-appropriate boundaries</li>
+          <li>Use calm, consistent responses</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2>Recording and Monitoring</h2>
+        <h3>Behaviour Logs</h3>
+        <ul>
+          <li>Record all incidents of challenging behaviour</li>
+          <li>Include date, time, location, and circumstances</li>
+          <li>Note triggers and responses</li>
+          <li>Monitor patterns and frequency</li>
+        </ul>
+
+        <h3>Biting Logs</h3>
+        <ul>
+          <li>Document all biting incidents immediately</li>
+          <li>Record both biter and victim details</li>
+          <li>Note context and circumstances</li>
+          <li>Implement appropriate interventions</li>
+        </ul>
+      </div>
+
+      <div class="footer">
+        <div class="signature-block">
+          <table class="signature-table">
+            <tr>
+              <td>This policy was adopted by</td>
+              <td>Bright Kids Day Nursery Ltd/Bright Kids Hackney Ltd</td>
+            </tr>
+            <tr>
+              <td>Date adopted</td>
+              <td>[Date]</td>
+            </tr>
+            <tr>
+              <td>Date to be reviewed</td>
+              <td>[Date]</td>
+            </tr>
+            <tr>
+              <td>Signed</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Position</td>
+              <td></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="update-info">
+        Updated [Date]
+      </div>
+    </div>
+
+    <div class="tab-content" id="policy3">
+      <h1>Child Protection Policy</h1>
+
+      <div class="header-info">
+        <strong>Bright Kids Day Nursery Ltd / Bright Kids Hackney Ltd</strong><br>
+        Adopted: [Date] | To be reviewed: [Date]
+      </div>
+
+      <div class="policy-section">
+        <h2>Policy Statement</h2>
+        <p>We are committed to safeguarding and promoting the welfare of all children in our care. This policy outlines our procedures for protecting children from harm and ensuring their safety and well-being.</p>
+      </div>
+
+      <div class="policy-section">
+        <h2>Legal Framework</h2>
+        <p>This policy is based on:</p>
+        <ul>
+          <li>Children Act 1989 and 2004</li>
+          <li>Working Together to Safeguard Children 2018</li>
+          <li>Keeping Children Safe in Education 2021</li>
+          <li>Early Years Foundation Stage (EYFS) 2021</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2>Types of Abuse</h2>
+        <h3>Physical Abuse</h3>
+        <p>Physical harm to a child, including hitting, shaking, burning, or any other form of physical injury.</p>
+
+        <h3>Emotional Abuse</h3>
+        <p>Persistent emotional maltreatment that affects a child's emotional development, including humiliation, rejection, or isolation.</p>
+
+        <h3>Sexual Abuse</h3>
+        <p>Any sexual activity with a child, including inappropriate touching, exposure to sexual content, or sexual exploitation.</p>
+
+        <h3>Neglect</h3>
+        <p>Failure to meet a child's basic physical and emotional needs, including inadequate supervision, nutrition, or medical care.</p>
+      </div>
+
+      <div class="policy-section">
+        <h2>Procedures</h2>
+        <h3>Recognising Concerns</h3>
+        <ul>
+          <li>All staff are trained to recognise signs of abuse</li>
+          <li>Concerns must be reported immediately to the Designated Safeguarding Lead (DSL)</li>
+          <li>Document all concerns accurately and confidentially</li>
+          <li>Follow the "What to do if you're worried a child is being abused" guidance</li>
+        </ul>
+
+        <h3>Reporting Procedures</h3>
+        <ul>
+          <li>Immediate reporting to DSL or deputy DSL</li>
+          <li>Contact local authority children's services if necessary</li>
+          <li>Refer to police if there is immediate danger</li>
+          <li>Maintain confidentiality and follow data protection guidelines</li>
+        </ul>
+      </div>
+
+      <div class="footer">
+        <div class="signature-block">
+          <table class="signature-table">
+            <tr>
+              <td>This policy was adopted by</td>
+              <td>Bright Kids Day Nursery Ltd/Bright Kids Hackney Ltd</td>
+            </tr>
+            <tr>
+              <td>Date adopted</td>
+              <td>[Date]</td>
+            </tr>
+            <tr>
+              <td>Date to be reviewed</td>
+              <td>[Date]</td>
+            </tr>
+            <tr>
+              <td>Signed</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Position</td>
+              <td></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="update-info">
+        Updated [Date]
+      </div>
+    </div>
+
+    <div class="tab-content" id="policy4">
+      <h1>Fire Safety Policy</h1>
+
+      <div class="header-info">
+        <strong>Bright Kids Day Nursery Ltd / Bright Kids Hackney Ltd</strong><br>
+        Adopted: [Date] | To be reviewed: [Date]
+      </div>
+
+      <div class="policy-section">
+        <h2>Policy Statement</h2>
+        <p>This policy ensures the safety of all children, staff, and visitors in the event of a fire emergency. We are committed to maintaining a safe environment and providing clear procedures for fire prevention and evacuation.</p>
+      </div>
+
+      <div class="policy-section">
+        <h2>Fire Prevention</h2>
+        <h3>Regular Checks</h3>
+        <ul>
+          <li>Daily checks of fire exits and escape routes</li>
+          <li>Weekly testing of fire alarms and emergency lighting</li>
+          <li>Monthly inspection of fire extinguishers</li>
+          <li>Annual professional fire safety assessment</li>
+        </ul>
+
+        <h3>Safety Measures</h3>
+        <ul>
+          <li>Keep all fire exits clear and unobstructed</li>
+          <li>Maintain working fire detection systems</li>
+          <li>Store flammable materials safely</li>
+          <li>Ensure all electrical equipment is PAT tested</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2>Evacuation Procedures</h2>
+        <h3>On Discovery of Fire</h3>
+        <ul>
+          <li>Raise the alarm immediately</li>
+          <li>Call 999 for fire service</li>
+          <li>Evacuate all children and staff to assembly point</li>
+          <li>Do not attempt to fight the fire unless trained</li>
+        </ul>
+
+        <h3>Evacuation Process</h3>
+        <ul>
+          <li>Follow designated escape routes</li>
+          <li>Take children to assembly point</li>
+          <li>Conduct roll call to ensure everyone is accounted for</li>
+          <li>Wait for fire service to arrive</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2>Fire Drills</h2>
+        <ul>
+          <li>Conduct fire drills monthly</li>
+          <li>Test different scenarios and escape routes</li>
+          <li>Ensure all staff are familiar with procedures</li>
+          <li>Record all drills and review performance</li>
+        </ul>
+      </div>
+
+      <div class="footer">
+        <div class="signature-block">
+          <table class="signature-table">
+            <tr>
+              <td>This policy was adopted by</td>
+              <td>Bright Kids Day Nursery Ltd/Bright Kids Hackney Ltd</td>
+            </tr>
+            <tr>
+              <td>Date adopted</td>
+              <td>[Date]</td>
+            </tr>
+            <tr>
+              <td>Date to be reviewed</td>
+              <td>[Date]</td>
+            </tr>
+            <tr>
+              <td>Signed</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Position</td>
+              <td></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="update-info">
+        Updated [Date]
+      </div>
+    </div>
+
+    <div class="tab-content" id="policy5">
+      <h1>Mobile Phone Policy</h1>
+
+      <div class="header-info">
+        <strong>Bright Kids Day Nursery Ltd / Bright Kids Hackney Ltd</strong><br>
+        Adopted: [Date] | To be reviewed: [Date]
+      </div>
+
+      <div class="policy-section">
+        <h2>Policy Statement</h2>
+        <p>This policy outlines the appropriate use of mobile phones and electronic devices within the nursery setting to ensure the safety and well-being of children and maintain professional standards.</p>
+      </div>
+
+      <div class="policy-section">
+        <h2>Staff Use of Mobile Phones</h2>
+        <h3>During Working Hours</h3>
+        <ul>
+          <li>Personal mobile phones must be switched off or on silent during working hours</li>
+          <li>Phones should be stored in lockers or designated areas</li>
+          <li>Emergency calls only during working hours</li>
+          <li>No personal use of phones in areas where children are present</li>
+        </ul>
+
+        <h3>Photography and Recording</h3>
+        <ul>
+          <li>No personal photography or recording of children</li>
+          <li>Use only nursery-approved devices for official photos</li>
+          <li>Follow data protection and safeguarding guidelines</li>
+          <li>Obtain proper consent for any photography</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2>Parent and Visitor Use</h2>
+        <ul>
+          <li>Parents and visitors should limit mobile phone use while on premises</li>
+          <li>No photography or recording without permission</li>
+          <li>Respect the privacy of other children and families</li>
+          <li>Follow nursery guidelines for electronic device use</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2>Emergency Procedures</h2>
+        <ul>
+          <li>Nursery phones available for emergency contact</li>
+          <li>Staff may use personal phones for genuine emergencies only</li>
+          <li>Report any emergency phone use to management</li>
+          <li>Maintain professional standards at all times</li>
+        </ul>
+      </div>
+
+      <div class="footer">
+        <div class="signature-block">
+          <table class="signature-table">
+            <tr>
+              <td>This policy was adopted by</td>
+              <td>Bright Kids Day Nursery Ltd/Bright Kids Hackney Ltd</td>
+            </tr>
+            <tr>
+              <td>Date adopted</td>
+              <td>[Date]</td>
+            </tr>
+            <tr>
+              <td>Date to be reviewed</td>
+              <td>[Date]</td>
+            </tr>
+            <tr>
+              <td>Signed</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Position</td>
+              <td></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="update-info">
+        Updated [Date]
+      </div>
+    </div>
+
+    <div class="tab-content" id="policy6">
+      <h1>Health and Safety Policy</h1>
+
+      <div class="header-info">
+        <strong>Bright Kids Day Nursery Ltd / Bright Kids Hackney Ltd</strong><br>
+        Adopted: [Date] | To be reviewed: [Date]
+      </div>
+
+      <div class="policy-section">
+        <h2>Policy Statement</h2>
+        <p>We are committed to providing a safe and healthy environment for all children, staff, and visitors. This policy outlines our approach to health and safety management in accordance with legal requirements and best practices.</p>
+      </div>
+
+      <div class="policy-section">
+        <h2>Legal Framework</h2>
+        <p>This policy is based on:</p>
+        <ul>
+          <li>Health and Safety at Work etc. Act 1974</li>
+          <li>Management of Health and Safety at Work Regulations 1999</li>
+          <li>Control of Substances Hazardous to Health (COSHH) Regulations 2002</li>
+          <li>Reporting of Injuries, Diseases and Dangerous Occurrences Regulations (RIDDOR) 2013</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2>Risk Assessment</h2>
+        <h3>Regular Risk Assessments</h3>
+        <ul>
+          <li>Conduct risk assessments for all activities and areas</li>
+          <li>Review assessments annually or when circumstances change</li>
+          <li>Involve staff in the risk assessment process</li>
+          <li>Document all findings and control measures</li>
+        </ul>
+
+        <h3>Hazard Identification</h3>
+        <ul>
+          <li>Identify potential hazards in the environment</li>
+          <li>Assess risks to children, staff, and visitors</li>
+          <li>Implement appropriate control measures</li>
+          <li>Monitor effectiveness of control measures</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2>Accident and Incident Reporting</h2>
+        <ul>
+          <li>Report all accidents and incidents immediately</li>
+          <li>Complete accident forms within 24 hours</li>
+          <li>Investigate serious incidents thoroughly</li>
+          <li>Implement corrective actions to prevent recurrence</li>
+        </ul>
+      </div>
+
+      <div class="footer">
+        <div class="signature-block">
+          <table class="signature-table">
+            <tr>
+              <td>This policy was adopted by</td>
+              <td>Bright Kids Day Nursery Ltd/Bright Kids Hackney Ltd</td>
+            </tr>
+            <tr>
+              <td>Date adopted</td>
+              <td>[Date]</td>
+            </tr>
+            <tr>
+              <td>Date to be reviewed</td>
+              <td>[Date]</td>
+            </tr>
+            <tr>
+              <td>Signed</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Position</td>
+              <td></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="update-info">
+        Updated [Date]
+      </div>
+    </div>
+
+    <div class="tab-content" id="policy7">
+      <h1>Coronavirus Policy</h1>
+
+      <div class="header-info">
+        <strong>Bright Kids Day Nursery Ltd / Bright Kids Hackney Ltd</strong><br>
+        Adopted: [Date] | To be reviewed: [Date]
+      </div>
+
+      <div class="policy-section">
+        <h2>Policy Statement</h2>
+        <p>This policy outlines our approach to managing coronavirus (COVID-19) risks within the nursery setting, ensuring the safety and well-being of all children, staff, and families while maintaining high-quality early years provision.</p>
+      </div>
+
+      <div class="policy-section">
+        <h2>Prevention Measures</h2>
+        <h3>Hygiene Practices</h3>
+        <ul>
+          <li>Regular hand washing with soap and water for at least 20 seconds</li>
+          <li>Use of hand sanitizer when hand washing is not possible</li>
+          <li>Enhanced cleaning of surfaces and equipment</li>
+          <li>Proper respiratory hygiene (catch it, bin it, kill it)</li>
+        </ul>
+
+        <h3>Social Distancing</h3>
+        <ul>
+          <li>Maintain appropriate distancing where possible</li>
+          <li>Limit mixing between different groups</li>
+          <li>Staggered drop-off and collection times</li>
+          <li>Outdoor activities where appropriate</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2>Symptom Management</h2>
+        <h3>Staff and Children</h3>
+        <ul>
+          <li>Stay home if experiencing COVID-19 symptoms</li>
+          <li>Follow government guidance on isolation periods</li>
+          <li>Seek medical advice if symptoms persist</li>
+          <li>Return only when fully recovered and no longer infectious</li>
+        </ul>
+
+        <h3>Reporting</h3>
+        <ul>
+          <li>Report positive cases to relevant authorities</li>
+          <li>Inform parents of any confirmed cases</li>
+          <li>Follow contact tracing procedures</li>
+          <li>Maintain confidentiality of personal information</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2>Adaptations</h2>
+        <ul>
+          <li>Modified activities to reduce transmission risk</li>
+          <li>Enhanced ventilation in indoor spaces</li>
+          <li>Regular review and update of procedures</li>
+          <li>Staff training on current guidance</li>
+        </ul>
+      </div>
+
+      <div class="footer">
+        <div class="signature-block">
+          <table class="signature-table">
+            <tr>
+              <td>This policy was adopted by</td>
+              <td>Bright Kids Day Nursery Ltd/Bright Kids Hackney Ltd</td>
+            </tr>
+            <tr>
+              <td>Date adopted</td>
+              <td>[Date]</td>
+            </tr>
+            <tr>
+              <td>Date to be reviewed</td>
+              <td>[Date]</td>
+            </tr>
+            <tr>
+              <td>Signed</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Position</td>
+              <td></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="update-info">
+        Updated [Date]
+      </div>
+    </div>
+
+    <div class="tab-content" id="policy8">
+      <h1>Reporting Concerns - Safeguarding Procedures</h1>
+
+      <div class="header-info">
+        <strong>Bright Kids Day Nursery Ltd / Bright Kids Hackney Ltd</strong><br>
+        Adopted: [Date] | To be reviewed: [Date]
+      </div>
+
+      <div class="policy-section">
+        <h2>Policy Statement</h2>
+        <p>This policy provides clear procedures for reporting safeguarding concerns to ensure the safety and well-being of all children in our care. All staff have a duty to report any concerns about a child's welfare.</p>
+      </div>
+
+      <div class="policy-section">
+        <h2>Types of Concerns</h2>
+        <h3>Immediate Concerns</h3>
+        <ul>
+          <li>Physical injury or signs of abuse</li>
+          <li>Disclosure of abuse by a child</li>
+          <li>Inappropriate behaviour by adults</li>
+          <li>Any situation where a child is at immediate risk</li>
+        </ul>
+
+        <h3>General Concerns</h3>
+        <ul>
+          <li>Changes in a child's behaviour or appearance</li>
+          <li>Unexplained injuries or marks</li>
+          <li>Inappropriate comments or drawings</li>
+          <li>Concerns about a child's home environment</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2>Reporting Procedures</h2>
+        <h3>Immediate Action</h3>
+        <ul>
+          <li>Report concerns immediately to the Designated Safeguarding Lead (DSL)</li>
+          <li>If DSL is unavailable, contact deputy DSL or manager</li>
+          <li>Document all concerns accurately and confidentially</li>
+          <li>Follow up with written report within 24 hours</li>
+        </ul>
+
+        <h3>External Reporting</h3>
+        <ul>
+          <li>Contact local authority children's services if necessary</li>
+          <li>Refer to police if there is immediate danger</li>
+          <li>Follow "What to do if you're worried a child is being abused" guidance</li>
+          <li>Maintain confidentiality and data protection standards</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2>Documentation</h2>
+        <ul>
+          <li>Record all concerns in safeguarding log</li>
+          <li>Include date, time, and details of concern</li>
+          <li>Note actions taken and outcomes</li>
+          <li>Store securely and maintain confidentiality</li>
+        </ul>
+      </div>
+
+      <div class="footer">
+        <div class="signature-block">
+          <table class="signature-table">
+            <tr>
+              <td>This policy was adopted by</td>
+              <td>Bright Kids Day Nursery Ltd/Bright Kids Hackney Ltd</td>
+            </tr>
+            <tr>
+              <td>Date adopted</td>
+              <td>[Date]</td>
+            </tr>
+            <tr>
+              <td>Date to be reviewed</td>
+              <td>[Date]</td>
+            </tr>
+            <tr>
+              <td>Signed</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Position</td>
+              <td></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="update-info">
+        Updated [Date]
+      </div>
+    </div>
+
+    <div class="tab-content" id="policy9">
+      <h1>Nappy Changing Policy</h1>
+
+      <div class="header-info">
+        <strong>Bright Kids Day Nursery Ltd / Bright Kids Hackney Ltd</strong><br>
+        Adopted: [Date] | To be reviewed: [Date]
+      </div>
+
+      <div class="policy-section">
+        <h2>Policy Statement</h2>
+        <p>This policy ensures that nappy changing is carried out safely, hygienically, and respectfully, promoting the child's dignity and well-being while maintaining high standards of hygiene and infection control.</p>
+      </div>
+
+      <div class="policy-section">
+        <h2>Hygiene Standards</h2>
+        <h3>Hand Hygiene</h3>
+        <ul>
+          <li>Wash hands thoroughly before and after each nappy change</li>
+          <li>Use disposable gloves for each change</li>
+          <li>Dispose of gloves immediately after use</li>
+          <li>Use hand sanitizer if hand washing is not immediately available</li>
+        </ul>
+
+        <h3>Changing Area</h3>
+        <ul>
+          <li>Clean and disinfect changing mat before each use</li>
+          <li>Ensure adequate ventilation in changing area</li>
+          <li>Keep changing area well-stocked with supplies</li>
+          <li>Dispose of waste in appropriate bins</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2>Changing Procedure</h2>
+        <h3>Preparation</h3>
+        <ul>
+          <li>Gather all necessary supplies before starting</li>
+          <li>Ensure changing area is clean and ready</li>
+          <li>Wash hands and put on disposable gloves</li>
+          <li>Ensure child is comfortable and secure</li>
+        </ul>
+
+        <h3>During Change</h3>
+        <ul>
+          <li>Talk to the child throughout the process</li>
+          <li>Clean thoroughly from front to back</li>
+          <li>Use appropriate cleaning products</li>
+          <li>Apply barrier cream if needed</li>
+        </ul>
+
+        <h3>After Change</h3>
+        <ul>
+          <li>Dispose of nappy and gloves immediately</li>
+          <li>Wash hands thoroughly</li>
+          <li>Clean and disinfect changing area</li>
+          <li>Record change in nappy changing log</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2>Record Keeping</h2>
+        <ul>
+          <li>Record each nappy change with time and details</li>
+          <li>Note any concerns about child's health or skin condition</li>
+          <li>Share information with parents as appropriate</li>
+          <li>Maintain confidentiality of records</li>
+        </ul>
+      </div>
+
+      <div class="footer">
+        <div class="signature-block">
+          <table class="signature-table">
+            <tr>
+              <td>This policy was adopted by</td>
+              <td>Bright Kids Day Nursery Ltd/Bright Kids Hackney Ltd</td>
+            </tr>
+            <tr>
+              <td>Date adopted</td>
+              <td>[Date]</td>
+            </tr>
+            <tr>
+              <td>Date to be reviewed</td>
+              <td>[Date]</td>
+            </tr>
+            <tr>
+              <td>Signed</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Position</td>
+              <td></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="update-info">
+        Updated [Date]
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    const tabs = document.querySelectorAll('.tab');
+    const contents = document.querySelectorAll('.tab-content');
+    const tabsContainer = document.getElementById('tabs');
+    const leftBtn = document.getElementById('leftBtn');
+    const rightBtn = document.getElementById('rightBtn');
+
+    // Function to convert tab text to URL-friendly hash
+    function textToHash(text) {
+      return text
+        .toLowerCase()
+        .replace(/[^a-z0-9\s]/g, '') // Remove special characters except spaces
+        .replace(/\s+/g, '') // Remove spaces
+        .trim();
+    }
+
+    // Function to switch to a specific tab
+    function switchToTab(tabElement) {
+      tabs.forEach(t => t.classList.remove('active'));
+      contents.forEach(c => c.classList.remove('active'));
+
+      tabElement.classList.add('active');
+      document.getElementById(tabElement.dataset.tab).classList.add('active');
+
+      // Scroll the active tab into view
+      tabElement.scrollIntoView({behavior: 'smooth', inline: 'center'});
+    }
+
+    // Tab switching
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        // Create URL-friendly hash from tab text
+        const tabText = tab.textContent.trim();
+        const hash = textToHash(tabText);
+        
+        // Update URL hash
+        window.location.hash = hash;
+        
+        // Switch to the tab
+        switchToTab(tab);
+      });
+    });
+
+    // Function to handle URL hash changes
+    function handleHashChange() {
+      const hash = window.location.hash.substring(1); // Remove the # symbol
+      if (hash) {
+        // Find tab by matching the hash with the tab text
+        let targetTab = null;
+        tabs.forEach(tab => {
+          const tabText = tab.textContent.trim();
+          const tabHash = textToHash(tabText);
+          if (tabHash === hash) {
+            targetTab = tab;
+          }
+        });
+        
+        if (targetTab) {
+          switchToTab(targetTab);
+        } else {
+          // If no matching tab found, activate the first tab
+          switchToTab(tabs[0]);
+        }
+      } else {
+        // If no hash, activate the first tab
+        switchToTab(tabs[0]);
+      }
+    }
+
+    // Handle initial page load
+    handleHashChange();
+
+    // Listen for hash changes (back/forward buttons)
+    window.addEventListener('hashchange', handleHashChange);
+
+    // Scroll buttons
+    leftBtn.addEventListener('click', () => {
+      tabsContainer.scrollBy({left: -200, behavior: 'smooth'});
+    });
+
+    rightBtn.addEventListener('click', () => {
+      tabsContainer.scrollBy({left: 200, behavior: 'smooth'});
+    });
+  </script>
+</body>
+
+</html>

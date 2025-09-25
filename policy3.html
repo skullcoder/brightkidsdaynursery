@@ -1,0 +1,1180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Induction Day Procedures</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    header img {
+      max-width: 180px;
+      height: auto;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    /* Tab Navigation Wrapper */
+    .tabs-wrapper {
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+
+    .header-info {
+      line-height: 24px;
+    }
+
+    .scroll-btn {
+      background: #fff;
+      border: 1px solid #ddd;
+      padding: 6px 10px;
+      cursor: pointer;
+      font-size: 18px;
+      border-radius: 4px;
+      margin: 0 5px;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+      transition: 0.3s;
+    }
+
+    .scroll-btn:hover {
+      background: #f0f0f0;
+    }
+
+    .tabs {
+      display: flex;
+      overflow-x: auto;
+      white-space: nowrap;
+      border-bottom: 2px solid #ddd;
+      scrollbar-width: none;
+      /* Hide scrollbar Firefox */
+      -ms-overflow-style: none;
+      /* IE */
+      flex: 1;
+    }
+
+    .tabs::-webkit-scrollbar {
+      display: none;
+      /* Hide scrollbar Chrome/Safari */
+    }
+
+    .tab {
+      flex: 0 0 auto;
+      padding: 10px 20px;
+      cursor: pointer;
+      border: none;
+      background: transparent;
+      font-size: 15px;
+      transition: 0.3s;
+    }
+
+    .tab:hover {
+      background: #f0f0f0;
+    }
+
+    .tab.active {
+      border-bottom: 3px solid #007bff;
+      font-weight: bold;
+      color: #007bff;
+    }
+
+    /* Tab Content */
+    .tab-content {
+      display: none;
+      padding: 20px;
+      background: #fff;
+      margin-top: 10px;
+      border-radius: 6px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    li {
+      margin: 10px 0px;
+      line-height: 25px;
+    }
+
+    .horizontal {
+      display: flex;
+      gap: 50px;
+    }
+
+    p {
+      line-height: 27px;
+    }
+
+    p.text-underline {
+      text-decoration: underline;
+      line-height: 19px;
+    }
+
+    .redborder {
+      padding: 20px;
+      color: red;
+      border: 1px solid red;
+      border-radius: 20px;
+    }
+
+    .section-title {
+      font-weight: bold;
+      margin-top: 25px;
+      text-decoration: underline;
+    }
+
+    .policy-section {
+      margin-top: 25px;
+      margin-bottom: 25px;
+      padding: 20px;
+      background-color: #f8f9fa;
+      border-radius: 8px;
+      border-left: 4px solid #3498db;
+    }
+
+    .procedures-section {
+      margin-top: 30px;
+      padding: 20px;
+      background-color: #e8f4fc;
+      border-radius: 8px;
+    }
+
+    .highlight {
+      background-color: #fffde7;
+      padding: 2px 5px;
+      border-radius: 3px;
+      font-weight: bold;
+    }
+
+    .page-break {
+      margin-top: 40px;
+      border-top: 1px dashed #ccc;
+      padding-top: 30px;
+    }
+
+    .review-info {
+      margin-top: 40px;
+      padding: 20px;
+      background-color: #f1f8e9;
+      border-radius: 8px;
+      border-left: 4px solid #7cb342;
+    }
+
+    .references {
+      margin-top: 30px;
+      padding: 20px;
+      background-color: #f5f5f5;
+      border-radius: 8px;
+    }
+
+    .policy-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .provider-name {
+      font-weight: bold;
+      font-size: 1.2em;
+      color: #2c3e50;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    table,
+    th,
+    td {
+      border: 1px solid #333;
+    }
+
+    th,
+    td {
+      padding: 10px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    .footer {
+      margin-top: 40px;
+      border-top: 1px solid #999;
+      padding-top: 15px;
+      font-size: 0.9em;
+      color: #444;
+    }
+
+    .signature-block {
+      margin-top: 30px;
+    }
+
+    .signature-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .signature-table td {
+      padding: 10px;
+      border: 1px solid #ccc;
+      vertical-align: top;
+    }
+
+    .signature-table td:first-child {
+      background-color: #f9f9f9;
+      font-weight: bold;
+      width: 30%;
+    }
+
+    .update-info {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #fff3e0;
+      border-radius: 5px;
+      text-align: center;
+      font-style: italic;
+    }
+
+    @media (max-width: 768px) {
+      .tab {
+        font-size: 14px;
+        padding: 8px 14px;
+      }
+
+      header img {
+        max-width: 140px;
+      }
+
+      .scroll-btn {
+        font-size: 16px;
+        padding: 4px 8px;
+      }
+
+      .container {
+        padding: 10px;
+      }
+
+      .tab-content {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <img
+        src="https://ik.imagekit.io/Brightkidsdaynursery/WhatsApp%20Image%202025-09-19%20at%2018.12.08.jpeg?updatedAt=1758376250662"
+        alt="Company Logo">
+    </header>
+
+    <h1>Induction Day Procedures</h1>
+
+    <!-- Tabs with Arrows -->
+    <div class="tabs-wrapper">
+      <button class="scroll-btn" id="leftBtn">&#9664;</button>
+      <div class="tabs" id="tabs">
+        <button class="tab active" data-tab="induct1">Introduction to buddy and their role</button>
+        <button class="tab" data-tab="induct2">Toilets</button>
+        <button class="tab" data-tab="induct3">Brief tour of the building and introduction to staff team</button>
+        <button class="tab" data-tab="induct4">Set up fingerprint system</button>
+        <button class="tab" data-tab="induct5">Additional paperwork or information needed from the office</button>
+        <button class="tab" data-tab="induct6">Outline expectations of the team leader and group</button>
+        <button class="tab" data-tab="induct7">How to read the daily schedules and deployment plans</button>
+        <button class="tab" data-tab="induct8">Snack and lunch time</button>
+        <button class="tab" data-tab="induct9">Nappy changing / toileting procedures</button>
+        <button class="tab" data-tab="induct10">Drop off and collection – including feedback</button>
+        <button class="tab" data-tab="induct11">Morning activities</button>
+        <button class="tab" data-tab="induct12">Afternoon activities</button>
+        <button class="tab" data-tab="induct13">Garden time</button>
+        <button class="tab" data-tab="induct14">Which children have specific dietary requirements</button>
+        <button class="tab" data-tab="induct15">SEN children and behaviour support plan</button>
+        <button class="tab" data-tab="induct16">Children who are not allowed photos taken</button>
+        <button class="tab" data-tab="induct17">Allergies, illnesses and care plans; how to care for me sheets</button>
+        <button class="tab" data-tab="induct18">What is the procedure if a child has an accident?</button>
+        <button class="tab" data-tab="induct19">Head injuries</button>
+        <button class="tab" data-tab="induct20">How to use the confidential diary</button>
+        <button class="tab" data-tab="induct21">Staff areas; staff room, kitchen, laundry</button>
+        <button class="tab" data-tab="induct22">Shared spaces; Mitbachon, Lobby, Rainbow room</button>
+        <button class="tab" data-tab="induct23">Garden</button>
+        <button class="tab" data-tab="induct24">Staircase storage</button>
+        <button class="tab" data-tab="induct25">Shared resources including garden kallax</button>
+        <button class="tab" data-tab="induct26">Log-on to moodle and make sure your account works</button>
+      </div>
+      <button class="scroll-btn" id="rightBtn">&#9654;</button>
+    </div>
+
+    <!-- Tab Contents -->
+    <div class="tab-content active" id="induct1">
+      <h1>Introduction to Buddy and Their Role</h1>
+
+      <div class="header-info">
+        <strong>Bright Kids Day Nursery Ltd / Bright Kids Hackney Ltd</strong><br>
+        Adopted: [Date] | To be reviewed: [Date]
+      </div>
+
+      <div class="policy-section">
+        <h2>Buddy System Overview</h2>
+        <p>Each new staff member is assigned a buddy who will guide them through their induction period and provide ongoing support during their first few months of employment.</p>
+      </div>
+
+      <div class="policy-section">
+        <h2>Buddy Responsibilities</h2>
+        <ul>
+          <li>Provide guidance and support during the first 3 months</li>
+          <li>Answer questions about procedures and policies</li>
+          <li>Introduce new staff to colleagues and children</li>
+          <li>Demonstrate best practices and routines</li>
+          <li>Provide feedback and encouragement</li>
+          <li>Escalate any concerns to management</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2>New Staff Responsibilities</h2>
+        <ul>
+          <li>Ask questions and seek clarification</li>
+          <li>Follow buddy's guidance and advice</li>
+          <li>Be open to feedback and learning</li>
+          <li>Maintain professional communication</li>
+          <li>Report any issues or concerns promptly</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tab-content" id="induct2">
+      <h1>Toilets</h1>
+
+      <div class="header-info">
+        <strong>Bright Kids Day Nursery Ltd / Bright Kids Hackney Ltd</strong><br>
+        Adopted: [Date] | To be reviewed: [Date]
+      </div>
+
+      <div class="policy-section">
+        <h2>Toilet Facilities</h2>
+        <ul>
+          <li>Location of all toilet facilities in the building</li>
+          <li>Children's toilet areas and adult facilities</li>
+          <li>Accessibility features and requirements</li>
+          <li>Cleaning schedules and maintenance procedures</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2>Toileting Procedures</h2>
+        <ul>
+          <li>Supervision requirements for different age groups</li>
+          <li>Privacy and dignity considerations</li>
+          <li>Hygiene protocols and hand washing</li>
+          <li>Accident procedures and cleaning protocols</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tab-content" id="induct3">
+      <h1>Brief Tour of the Building and Introduction to Staff Team</h1>
+
+      <div class="header-info">
+        <strong>Bright Kids Day Nursery Ltd / Bright Kids Hackney Ltd</strong><br>
+        Adopted: [Date] | To be reviewed: [Date]
+      </div>
+
+      <div class="policy-section">
+        <h2>Building Layout</h2>
+        <ul>
+          <li>Main entrance and reception area</li>
+          <li>Children's rooms and age-appropriate areas</li>
+          <li>Kitchen and food preparation areas</li>
+          <li>Staff facilities and break areas</li>
+          <li>Storage areas and resource rooms</li>
+          <li>Emergency exits and fire assembly points</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2>Staff Team Introduction</h2>
+        <ul>
+          <li>Management team and their roles</li>
+          <li>Room leaders and key personnel</li>
+          <li>Support staff and their responsibilities</li>
+          <li>Communication channels and reporting structure</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tab-content" id="induct4">
+      <h1>Set Up Fingerprint System</h1>
+
+      <div class="header-info">
+        <strong>Bright Kids Day Nursery Ltd / Bright Kids Hackney Ltd</strong><br>
+        Adopted: [Date] | To be reviewed: [Date]
+      </div>
+
+      <div class="policy-section">
+        <h2>Fingerprint Registration</h2>
+        <ul>
+          <li>Biometric data collection process</li>
+          <li>Security and privacy considerations</li>
+          <li>Access control and building security</li>
+          <li>Backup access methods if fingerprint fails</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2>System Usage</h2>
+        <ul>
+          <li>Clock in/out procedures</li>
+          <li>Access to restricted areas</li>
+          <li>Data protection and retention policies</li>
+          <li>Troubleshooting common issues</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tab-content" id="induct5">
+      <h1>Additional Paperwork or Information Needed from the Office</h1>
+
+      <div class="header-info">
+        <strong>Bright Kids Day Nursery Ltd / Bright Kids Hackney Ltd</strong><br>
+        Adopted: [Date] | To be reviewed: [Date]
+      </div>
+
+      <div class="policy-section">
+        <h2>Required Documentation</h2>
+        <ul>
+          <li>DBS check completion and verification</li>
+          <li>References and background checks</li>
+          <li>Medical clearance and health declarations</li>
+          <li>Contract signing and terms acceptance</li>
+          <li>Bank details and payroll information</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2>Additional Information</h2>
+        <ul>
+          <li>Emergency contact details</li>
+          <li>Next of kin information</li>
+          <li>Professional qualifications and certificates</li>
+          <li>Training records and CPD requirements</li>
+          <li>Uniform and equipment requirements</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tab-content" id="induct6">
+      <h1>Outline Expectations of the Team Leader and Group</h1>
+
+      <div class="header-info">
+        <strong>Bright Kids Day Nursery Ltd / Bright Kids Hackney Ltd</strong><br>
+        Adopted: [Date] | To be reviewed: [Date]
+      </div>
+
+      <div class="policy-section">
+        <h2>Core Expectations</h2>
+        <ul>
+          <li>Being a role model</li>
+          <li>Using initiative</li>
+          <li>Good communication</li>
+          <li>Putting the children first</li>
+          <li>Extending learning opportunities</li>
+          <li>Team work</li>
+          <li>Keeping the learning environment tidy, respect equipment</li>
+          <li>Set up of room / garden</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2>Team Leader Responsibilities</h2>
+        <ul>
+          <li>Daily room management and coordination</li>
+          <li>Staff supervision and support</li>
+          <li>Parent communication and relationship building</li>
+          <li>Curriculum planning and implementation</li>
+          <li>Health and safety compliance</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tab-content" id="induct7">
+      <h1>How to Read the Daily Schedules and Deployment Plans</h1>
+
+      <div class="header-info">
+        <strong>Bright Kids Day Nursery Ltd / Bright Kids Hackney Ltd</strong><br>
+        Adopted: [Date] | To be reviewed: [Date]
+      </div>
+
+      <div class="policy-section">
+        <h2>Daily Schedule Understanding</h2>
+        <ul>
+          <li>Reading and interpreting daily timetables</li>
+          <li>Key transition times and activities</li>
+          <li>Meal times and snack schedules</li>
+          <li>Outdoor play and garden time</li>
+          <li>Quiet time and rest periods</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2>Deployment Planning</h2>
+        <ul>
+          <li>Staff allocation and room assignments</li>
+          <li>Ratio requirements and cover arrangements</li>
+          <li>Break times and lunch coverage</li>
+          <li>Emergency cover procedures</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tab-content" id="induct8">
+      <h1>Snack and Lunch Time</h1>
+
+      <div class="header-info">
+        <strong>Bright Kids Day Nursery Ltd / Bright Kids Hackney Ltd</strong><br>
+        Adopted: [Date] | To be reviewed: [Date]
+      </div>
+
+      <div class="policy-section">
+        <h2>Food Service Procedures</h2>
+        <ul>
+          <li>Food hygiene and safety protocols</li>
+          <li>Allergy awareness and dietary requirements</li>
+          <li>Portion sizes and nutritional guidelines</li>
+          <li>Supervision during meal times</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2>Meal Time Routines</h2>
+        <ul>
+          <li>Setting up dining areas</li>
+          <li>Hand washing before meals</li>
+          <li>Encouraging healthy eating habits</li>
+          <li>Clearing and cleaning procedures</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tab-content" id="induct9">
+      <h1>Nappy Changing / Toileting Procedures</h1>
+
+      <div class="header-info">
+        <strong>Bright Kids Day Nursery Ltd / Bright Kids Hackney Ltd</strong><br>
+        Adopted: [Date] | To be reviewed: [Date]
+      </div>
+
+      <div class="policy-section">
+        <h2>Hygiene and Safety</h2>
+        <ul>
+          <li>Hand washing and PPE requirements</li>
+          <li>Disposal procedures and waste management</li>
+          <li>Cleaning and sanitizing changing areas</li>
+          <li>Safeguarding and privacy considerations</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2>Record Keeping</h2>
+        <ul>
+          <li>Nappy changing logs and documentation</li>
+          <li>Parent communication about toileting</li>
+          <li>Accident and incident reporting</li>
+          <li>Health and development monitoring</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tab-content" id="induct10">
+      <h1>Drop Off and Collection – Including Feedback</h1>
+
+      <div class="header-info">
+        <strong>Bright Kids Day Nursery Ltd / Bright Kids Hackney Ltd</strong><br>
+        Adopted: [Date] | To be reviewed: [Date]
+      </div>
+
+      <div class="policy-section">
+        <h2>Drop Off Procedures</h2>
+        <ul>
+          <li>Welcoming children and families</li>
+          <li>Handover information from parents</li>
+          <li>Health checks and wellbeing monitoring</li>
+          <li>Settling children into daily routines</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2>Collection and Feedback</h2>
+        <ul>
+          <li>Daily feedback to parents about their child's day</li>
+          <li>Sharing achievements and learning experiences</li>
+          <li>Discussing any concerns or observations</li>
+          <li>Authorized collector verification</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tab-content" id="induct11">
+      <h1>Morning Activities</h1>
+
+      <div class="header-info">
+        <strong>Bright Kids Day Nursery Ltd / Bright Kids Hackney Ltd</strong><br>
+        Adopted: [Date] | To be reviewed: [Date]
+      </div>
+
+      <div class="policy-section">
+        <h2>Activity Planning</h2>
+        <ul>
+          <li>Planned learning experiences and provocations</li>
+          <li>Free-flow and child-initiated play</li>
+          <li>Small group activities and focused learning</li>
+          <li>Observation and assessment opportunities</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2>Learning Environment</h2>
+        <ul>
+          <li>Setting up engaging learning spaces</li>
+          <li>Resource organization and accessibility</li>
+          <li>Safety checks and risk assessments</li>
+          <li>Encouraging independence and exploration</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tab-content" id="induct12">
+      <h1>Afternoon Activities</h1>
+
+      <div class="header-info">
+        <strong>Bright Kids Day Nursery Ltd / Bright Kids Hackney Ltd</strong><br>
+        Adopted: [Date] | To be reviewed: [Date]
+      </div>
+
+      <div class="policy-section">
+        <h2>Afternoon Routines</h2>
+        <ul>
+          <li>Calmer activities and quiet time</li>
+          <li>Story time and group activities</li>
+          <li>Outdoor provision and fresh air</li>
+          <li>Preparation for home time</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2>End of Day Procedures</h2>
+        <ul>
+          <li>Tidying and cleaning routines</li>
+          <li>Reflection and evaluation of the day</li>
+          <li>Preparation for the following day</li>
+          <li>Handover notes and observations</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tab-content" id="induct13">
+      <h1>Garden Time</h1>
+
+      <div class="header-info">
+        <strong>Bright Kids Day Nursery Ltd / Bright Kids Hackney Ltd</strong><br>
+        Adopted: [Date] | To be reviewed: [Date]
+      </div>
+
+      <div class="policy-section">
+        <h2>Outdoor Safety</h2>
+        <ul>
+          <li>Risk assessments and safety checks</li>
+          <li>Supervision points and staff positioning</li>
+          <li>Weather considerations and appropriate clothing</li>
+          <li>Emergency procedures and first aid</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2>Garden Activities</h2>
+        <ul>
+          <li>Physical development and gross motor skills</li>
+          <li>Nature exploration and environmental learning</li>
+          <li>Social interaction and cooperative play</li>
+          <li>Use of shared garden resources</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tab-content" id="induct14">
+      <h1>Which Children Have Specific Dietary Requirements</h1>
+
+      <div class="header-info">
+        <strong>Bright Kids Day Nursery Ltd / Bright Kids Hackney Ltd</strong><br>
+        Adopted: [Date] | To be reviewed: [Date]
+      </div>
+
+      <div class="policy-section">
+        <h2>Dietary Management</h2>
+        <ul>
+          <li>Allergy information and medical requirements</li>
+          <li>Religious and cultural dietary needs</li>
+          <li>Special medical diets and restrictions</li>
+          <li>Food preparation and serving protocols</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2>Documentation and Communication</h2>
+        <ul>
+          <li>Care plans and medical documentation</li>
+          <li>Parent communication and updates</li>
+          <li>Kitchen staff coordination</li>
+          <li>Emergency procedures for allergic reactions</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tab-content" id="induct15">
+      <h1>SEN Children and Behaviour Support Plan</h1>
+
+      <div class="header-info">
+        <strong>Bright Kids Day Nursery Ltd / Bright Kids Hackney Ltd</strong><br>
+        Adopted: [Date] | To be reviewed: [Date]
+      </div>
+
+      <div class="policy-section">
+        <h2>Special Educational Needs</h2>
+        <ul>
+          <li>Individual support plans and strategies</li>
+          <li>Adaptations and modifications to activities</li>
+          <li>Communication methods and tools</li>
+          <li>Collaboration with external professionals</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2>Behaviour Support</h2>
+        <ul>
+          <li>Positive behaviour strategies</li>
+          <li>De-escalation techniques</li>
+          <li>Individual behaviour plans</li>
+          <li>Parent partnership and communication</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tab-content" id="induct16">
+      <h1>Children Who Are Not Allowed Photos Taken</h1>
+
+      <div class="header-info">
+        <strong>Bright Kids Day Nursery Ltd / Bright Kids Hackney Ltd</strong><br>
+        Adopted: [Date] | To be reviewed: [Date]
+      </div>
+
+      <div class="policy-section">
+        <h2>Photography Restrictions</h2>
+        <ul>
+          <li>Parental consent and restrictions</li>
+          <li>Legal and safeguarding considerations</li>
+          <li>Privacy and data protection requirements</li>
+          <li>Alternative documentation methods</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2>Implementation</h2>
+        <ul>
+          <li>Staff awareness and training</li>
+          <li>Visual reminders and systems</li>
+          <li>Regular review and updates</li>
+          <li>Communication with families</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tab-content" id="induct17">
+      <h1>Allergies, Illnesses and Care Plans; How to Care for Me Sheets</h1>
+
+      <div class="header-info">
+        <strong>Bright Kids Day Nursery Ltd / Bright Kids Hackney Ltd</strong><br>
+        Adopted: [Date] | To be reviewed: [Date]
+      </div>
+
+      <div class="policy-section">
+        <h2>Medical Information Management</h2>
+        <ul>
+          <li>Allergy registers and medical alerts</li>
+          <li>Care plans and "How to Care for Me" sheets</li>
+          <li>Medication administration procedures</li>
+          <li>Emergency contact information</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2>Implementation and Monitoring</h2>
+        <ul>
+          <li>Staff training and awareness</li>
+          <li>Regular updates and reviews</li>
+          <li>Parent communication and collaboration</li>
+          <li>Documentation and record keeping</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tab-content" id="induct18">
+      <h1>What Is the Procedure If a Child Has an Accident?</h1>
+
+      <div class="header-info">
+        <strong>Bright Kids Day Nursery Ltd / Bright Kids Hackney Ltd</strong><br>
+        Adopted: [Date] | To be reviewed: [Date]
+      </div>
+
+      <div class="policy-section">
+        <h2>Immediate Response</h2>
+        <ul>
+          <li>First aid administration and safety</li>
+          <li>Comforting and reassuring the child</li>
+          <li>Assessing the severity of the injury</li>
+          <li>Calling for additional support if needed</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2>Documentation and Reporting</h2>
+        <ul>
+          <li>Accident form completion</li>
+          <li>Parent notification procedures</li>
+          <li>Medical attention requirements</li>
+          <li>Follow-up and monitoring</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tab-content" id="induct19">
+      <h1>Head Injuries</h1>
+
+      <div class="header-info">
+        <strong>Bright Kids Day Nursery Ltd / Bright Kids Hackney Ltd</strong><br>
+        Adopted: [Date] | To be reviewed: [Date]
+      </div>
+
+      <div class="policy-section">
+        <h2>Head Injury Protocol</h2>
+        <ul>
+          <li>Immediate assessment and first aid</li>
+          <li>Monitoring for signs of concussion</li>
+          <li>Parent notification requirements</li>
+          <li>Medical attention escalation</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2>Ongoing Monitoring</h2>
+        <ul>
+          <li>Observation periods and checks</li>
+          <li>Documentation and record keeping</li>
+          <li>Communication with parents</li>
+          <li>Return to play guidelines</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tab-content" id="induct20">
+      <h1>How to Use the Confidential Diary</h1>
+
+      <div class="header-info">
+        <strong>Bright Kids Day Nursery Ltd / Bright Kids Hackney Ltd</strong><br>
+        Adopted: [Date] | To be reviewed: [Date]
+      </div>
+
+      <div class="policy-section">
+        <h2>Purpose and Usage</h2>
+        <ul>
+          <li>Recording confidential observations</li>
+          <li>Safeguarding concerns and incidents</li>
+          <li>Staff communication and handovers</li>
+          <li>Privacy and data protection</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2>Procedures and Guidelines</h2>
+        <ul>
+          <li>What information to record</li>
+          <li>Access restrictions and security</li>
+          <li>Storage and retention policies</li>
+          <li>Escalation procedures</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tab-content" id="induct21">
+      <h1>Staff Areas; Staff Room, Kitchen, Laundry</h1>
+
+      <div class="header-info">
+        <strong>Bright Kids Day Nursery Ltd / Bright Kids Hackney Ltd</strong><br>
+        Adopted: [Date] | To be reviewed: [Date]
+      </div>
+
+      <div class="policy-section">
+        <h2>Staff Facilities</h2>
+        <ul>
+          <li>Staff room layout and facilities</li>
+          <li>Kitchen access and food preparation areas</li>
+          <li>Laundry facilities and procedures</li>
+          <li>Break times and personal use guidelines</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2>Usage Guidelines</h2>
+        <ul>
+          <li>Health and safety requirements</li>
+          <li>Cleaning and maintenance responsibilities</li>
+          <li>Security and access control</li>
+          <li>Respect for shared spaces</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tab-content" id="induct22">
+      <h1>Shared Spaces; Mitbachon, Lobby, Rainbow Room</h1>
+
+      <div class="header-info">
+        <strong>Bright Kids Day Nursery Ltd / Bright Kids Hackney Ltd</strong><br>
+        Adopted: [Date] | To be reviewed: [Date]
+      </div>
+
+      <div class="policy-section">
+        <h2>Shared Area Management</h2>
+        <ul>
+          <li>Mitbachon room usage and activities</li>
+          <li>Lobby area and reception functions</li>
+          <li>Rainbow room activities and resources</li>
+          <li>Booking systems and scheduling</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2>Coordination and Communication</h2>
+        <ul>
+          <li>Inter-room communication</li>
+          <li>Resource sharing and management</li>
+          <li>Conflict resolution procedures</li>
+          <li>Maintenance and upkeep responsibilities</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tab-content" id="induct23">
+      <h1>Garden</h1>
+
+      <div class="header-info">
+        <strong>Bright Kids Day Nursery Ltd / Bright Kids Hackney Ltd</strong><br>
+        Adopted: [Date] | To be reviewed: [Date]
+      </div>
+
+      <div class="policy-section">
+        <h2>Garden Management</h2>
+        <ul>
+          <li>Outdoor space layout and features</li>
+          <li>Safety checks and risk assessments</li>
+          <li>Weather considerations and seasonal changes</li>
+          <li>Equipment maintenance and storage</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2>Activities and Learning</h2>
+        <ul>
+          <li>Physical development opportunities</li>
+          <li>Nature exploration and environmental learning</li>
+          <li>Social interaction and cooperative play</li>
+          <li>Creative and imaginative activities</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tab-content" id="induct24">
+      <h1>Staircase Storage</h1>
+
+      <div class="header-info">
+        <strong>Bright Kids Day Nursery Ltd / Bright Kids Hackney Ltd</strong><br>
+        Adopted: [Date] | To be reviewed: [Date]
+      </div>
+
+      <div class="policy-section">
+        <h2>Storage Organization</h2>
+        <ul>
+          <li>Storage areas and access points</li>
+          <li>Resource organization and labeling</li>
+          <li>Safety considerations and accessibility</li>
+          <li>Inventory management and rotation</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2>Usage Guidelines</h2>
+        <ul>
+          <li>Access procedures and permissions</li>
+          <li>Health and safety requirements</li>
+          <li>Cleaning and maintenance responsibilities</li>
+          <li>Emergency access and evacuation</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tab-content" id="induct25">
+      <h1>Shared Resources Including Garden Kallax</h1>
+
+      <div class="header-info">
+        <strong>Bright Kids Day Nursery Ltd / Bright Kids Hackney Ltd</strong><br>
+        Adopted: [Date] | To be reviewed: [Date]
+      </div>
+
+      <div class="policy-section">
+        <h2>Resource Management</h2>
+        <ul>
+          <li>Garden Kallax storage system</li>
+          <li>Shared equipment and materials</li>
+          <li>Booking and allocation procedures</li>
+          <li>Maintenance and care requirements</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2>Coordination and Sharing</h2>
+        <ul>
+          <li>Inter-room resource sharing</li>
+          <li>Communication and planning</li>
+          <li>Conflict resolution procedures</li>
+          <li>Regular review and updates</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tab-content" id="induct26">
+      <h1>Log-on to Moodle and Make Sure Your Account Works</h1>
+
+      <div class="header-info">
+        <strong>Bright Kids Day Nursery Ltd / Bright Kids Hackney Ltd</strong><br>
+        Adopted: [Date] | To be reviewed: [Date]
+      </div>
+
+      <div class="policy-section">
+        <h2>Moodle Account Setup</h2>
+        <p>Log-on to Moodle and make sure your account works. Ask the office for a Moodle account, if you haven't already got it. You can enrol to the 'Induction' course, and complete the 'introduction' module.</p>
+      </div>
+
+      <div class="policy-section">
+        <h2>Induction Course Requirements</h2>
+        <ul>
+          <li>Introduction module completion</li>
+          <li>Policy acknowledgment and understanding</li>
+          <li>Assessment and certification</li>
+          <li>Ongoing professional development</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2>Technical Support</h2>
+        <ul>
+          <li>Login troubleshooting</li>
+          <li>Password reset procedures</li>
+          <li>Course enrollment assistance</li>
+          <li>IT support contact information</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    const tabs = document.querySelectorAll('.tab');
+    const contents = document.querySelectorAll('.tab-content');
+    const tabsContainer = document.getElementById('tabs');
+    const leftBtn = document.getElementById('leftBtn');
+    const rightBtn = document.getElementById('rightBtn');
+
+    // Function to convert tab text to URL-friendly hash
+    function textToHash(text) {
+      return text
+        .toLowerCase()
+        .replace(/[^a-z0-9\s]/g, '')
+        .replace(/\s+/g, '')
+        .trim();
+    }
+
+    function switchToTab(tabElement) {
+      tabs.forEach(t => t.classList.remove('active'));
+      contents.forEach(c => c.classList.remove('active'));
+      tabElement.classList.add('active');
+      document.getElementById(tabElement.dataset.tab).classList.add('active');
+      tabElement.scrollIntoView({behavior: 'smooth', inline: 'center'});
+    }
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const tabText = tab.textContent.trim();
+        const hash = textToHash(tabText);
+        window.location.hash = hash;
+        switchToTab(tab);
+      });
+    });
+
+    function handleHashChange() {
+      const hash = window.location.hash.substring(1);
+      if (hash) {
+        let targetTab = null;
+        tabs.forEach(tab => {
+          const tabText = tab.textContent.trim();
+          const tabHash = textToHash(tabText);
+          if (tabHash === hash) targetTab = tab;
+        });
+        if (targetTab) {
+          switchToTab(targetTab);
+        } else {
+          switchToTab(tabs[0]);
+        }
+      } else {
+        switchToTab(tabs[0]);
+      }
+    }
+
+    handleHashChange();
+    window.addEventListener('hashchange', handleHashChange);
+
+    leftBtn.addEventListener('click', () => {
+      tabsContainer.scrollBy({left: -200, behavior: 'smooth'});
+    });
+
+    rightBtn.addEventListener('click', () => {
+      tabsContainer.scrollBy({left: 200, behavior: 'smooth'});
+    });
+  </script>
+</body>
+
+</html>

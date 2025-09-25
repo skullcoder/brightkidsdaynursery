@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Staff Policies and Procedures</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    header img {
+      max-width: 180px;
+      height: auto;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    /* Tab Navigation Wrapper */
+    .tabs-wrapper {
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+
+    .header-info {
+      line-height: 24px;
+    }
+
+    .scroll-btn {
+      background: #fff;
+      border: 1px solid #ddd;
+      padding: 6px 10px;
+      cursor: pointer;
+      font-size: 18px;
+      border-radius: 4px;
+      margin: 0 5px;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+      transition: 0.3s;
+    }
+
+    .scroll-btn:hover {
+      background: #f0f0f0;
+    }
+
+    .tabs {
+      display: flex;
+      overflow-x: auto;
+      white-space: nowrap;
+      border-bottom: 2px solid #ddd;
+      scrollbar-width: none;
+      /* Hide scrollbar Firefox */
+      -ms-overflow-style: none;
+      /* IE */
+      flex: 1;
+    }
+
+    .tabs::-webkit-scrollbar {
+      display: none;
+      /* Hide scrollbar Chrome/Safari */
+    }
+
+    .tab {
+      flex: 0 0 auto;
+      padding: 10px 20px;
+      cursor: pointer;
+      border: none;
+      background: transparent;
+      font-size: 15px;
+      transition: 0.3s;
+    }
+
+    .tab:hover {
+      background: #f0f0f0;
+    }
+
+    .tab.active {
+      border-bottom: 3px solid #007bff;
+      font-weight: bold;
+      color: #007bff;
+    }
+
+    /* Tab Content */
+    .tab-content {
+      display: none;
+      padding: 20px;
+      background: #fff;
+      margin-top: 10px;
+      border-radius: 6px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    li {
+      margin: 10px 0px;
+      line-height: 25px;
+    }
+
+    .horizontal {
+      display: flex;
+      gap: 50px;
+    }
+
+    p {
+      line-height: 27px;
+    }
+
+    p.text-underline {
+      text-decoration: underline;
+      line-height: 19px;
+    }
+
+    .redborder {
+      padding: 20px;
+      color: red;
+      border: 1px solid red;
+      border-radius: 20px;
+    }
+
+    .section-title {
+      font-weight: bold;
+      margin-top: 25px;
+      text-decoration: underline;
+    }
+
+    .policy-section {
+      margin-top: 25px;
+      margin-bottom: 25px;
+      padding: 20px;
+      background-color: #f8f9fa;
+      border-radius: 8px;
+      border-left: 4px solid #3498db;
+    }
+
+    .procedures-section {
+      margin-top: 30px;
+      padding: 20px;
+      background-color: #e8f4fc;
+      border-radius: 8px;
+    }
+
+    .highlight {
+      background-color: #fffde7;
+      padding: 2px 5px;
+      border-radius: 3px;
+      font-weight: bold;
+    }
+
+    .page-break {
+      margin-top: 40px;
+      border-top: 1px dashed #ccc;
+      padding-top: 30px;
+    }
+
+    .review-info {
+      margin-top: 40px;
+      padding: 20px;
+      background-color: #f1f8e9;
+      border-radius: 8px;
+      border-left: 4px solid #7cb342;
+    }
+
+    .references {
+      margin-top: 30px;
+      padding: 20px;
+      background-color: #f5f5f5;
+      border-radius: 8px;
+    }
+
+    .policy-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .provider-name {
+      font-weight: bold;
+      font-size: 1.2em;
+      color: #2c3e50;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    table,
+    th,
+    td {
+      border: 1px solid #333;
+    }
+
+    th,
+    td {
+      padding: 10px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    .footer {
+      margin-top: 40px;
+      border-top: 1px solid #999;
+      padding-top: 15px;
+      font-size: 0.9em;
+      color: #444;
+    }
+
+    .signature-block {
+      margin-top: 30px;
+    }
+
+    .signature-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .signature-table td {
+      padding: 10px;
+      border: 1px solid #ccc;
+      vertical-align: top;
+    }
+
+    .signature-table td:first-child {
+      background-color: #f9f9f9;
+      font-weight: bold;
+      width: 30%;
+    }
+
+    .update-info {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #fff3e0;
+      border-radius: 5px;
+      text-align: center;
+      font-style: italic;
+    }
+
+    @media (max-width: 768px) {
+      .tab {
+        font-size: 14px;
+        padding: 8px 14px;
+      }
+
+      header img {
+        max-width: 140px;
+      }
+
+      .scroll-btn {
+        font-size: 16px;
+        padding: 4px 8px;
+      }
+
+      .container {
+        padding: 10px;
+      }
+
+      .tab-content {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <img
+        src="https://ik.imagekit.io/Brightkidsdaynursery/WhatsApp%20Image%202025-09-19%20at%2018.12.08.jpeg?updatedAt=1758376250662"
+        alt="Company Logo">
+    </header>
+
+    <h1>Staff Policies and Procedures</h1>
+
+    <!-- Tabs with Arrows -->
+    <div class="tabs-wrapper">
+      <button class="scroll-btn" id="leftBtn">&#9664;</button>
+      <div class="tabs" id="tabs">
+        <button class="tab active" data-tab="staff1">Discuss the policies and procedures stated above</button>
+        <button class="tab" data-tab="staff2">Explanation of induction procedure</button>
+        <button class="tab" data-tab="staff3">Hours and breaks</button>
+        <button class="tab" data-tab="staff4">Holiday entitlement and how to apply</button>
+        <button class="tab" data-tab="staff5">Staff portal</button>
+        <button class="tab" data-tab="staff6">Compulsory monthly staff meetings</button>
+        <button class="tab" data-tab="staff7">Line management, team leader's role and staffing structure</button>
+        <button class="tab" data-tab="staff8">WhatsApp groups</button>
+      </div>
+      <button class="scroll-btn" id="rightBtn">&#9654;</button>
+    </div>
+
+    <!-- Tab Contents -->
+    <div class="tab-content active" id="staff1">
+      <h1>Policies and Procedures Discussion</h1>
+
+      <div class="header-info">
+        <strong>Bright Kids Day Nursery Ltd / Bright Kids Hackney Ltd</strong><br>
+        Adopted: [Date] | To be reviewed: [Date]
+      </div>
+
+      <div class="policy-section">
+        <h2>Overview</h2>
+        <p>This section provides a comprehensive discussion of all policies and procedures that govern our nursery operations. It is essential that all staff members are familiar with these policies to ensure consistent, high-quality care and compliance with regulatory requirements.</p>
+      </div>
+
+      <div class="policy-section">
+        <h2>Key Policy Areas</h2>
+        <h3>Safeguarding and Child Protection</h3>
+        <ul>
+          <li>Child protection procedures and reporting mechanisms</li>
+          <li>Safeguarding training requirements for all staff</li>
+          <li>Whistle-blowing procedures and confidentiality</li>
+          <li>Working with other agencies and multi-agency approach</li>
+        </ul>
+
+        <h3>Health and Safety</h3>
+        <ul>
+          <li>Fire safety procedures and evacuation plans</li>
+          <li>First aid protocols and medical emergency procedures</li>
+          <li>Risk assessment and management</li>
+          <li>Accident and incident reporting procedures</li>
+        </ul>
+
+        <h3>Operational Procedures</h3>
+        <ul>
+          <li>Administering medicines and medical care</li>
+          <li>Food and drink policies and dietary requirements</li>
+          <li>Nappy changing and personal care procedures</li>
+          <li>Missing child procedures and emergency contacts</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2>Implementation and Compliance</h2>
+        <h3>Staff Responsibilities</h3>
+        <ul>
+          <li>Read and understand all relevant policies</li>
+          <li>Attend mandatory training sessions</li>
+          <li>Follow procedures consistently in daily practice</li>
+          <li>Report any concerns or policy violations</li>
+        </ul>
+
+        <h3>Management Responsibilities</h3>
+        <ul>
+          <li>Ensure policies are up-to-date and compliant</li>
+          <li>Provide regular training and updates</li>
+          <li>Monitor compliance and address issues</li>
+          <li>Review and update policies annually</li>
+        </ul>
+      </div>
+
+      <div class="footer">
+        <div class="signature-block">
+          <table class="signature-table">
+            <tr>
+              <td>This policy was adopted by</td>
+              <td>Bright Kids Day Nursery Ltd/Bright Kids Hackney Ltd</td>
+            </tr>
+            <tr>
+              <td>Date adopted</td>
+              <td>[Date]</td>
+            </tr>
+            <tr>
+              <td>Date to be reviewed</td>
+              <td>[Date]</td>
+            </tr>
+            <tr>
+              <td>Signed</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Position</td>
+              <td></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="update-info">
+        Updated [Date]
+      </div>
+    </div>
+
+    <div class="tab-content" id="staff2">
+      <h1>Induction Procedure</h1>
+
+      <div class="header-info">
+        <strong>Bright Kids Day Nursery Ltd / Bright Kids Hackney Ltd</strong><br>
+        Adopted: [Date] | To be reviewed: [Date]
+      </div>
+
+      <div class="policy-section">
+        <h2>Purpose</h2>
+        <p>The induction procedure ensures that all new staff members receive comprehensive training and orientation to enable them to perform their roles effectively and safely within our nursery environment.</p>
+      </div>
+
+      <div class="policy-section">
+        <h2>Pre-Employment Requirements</h2>
+        <h3>Documentation</h3>
+        <ul>
+          <li>DBS check (Disclosure and Barring Service)</li>
+          <li>References from previous employers</li>
+          <li>Qualification certificates and training records</li>
+          <li>Medical clearance and health declaration</li>
+          <li>Right to work documentation</li>
+        </ul>
+
+        <h3>Initial Assessment</h3>
+        <ul>
+          <li>Skills and experience evaluation</li>
+          <li>Training needs identification</li>
+          <li>Role-specific requirements assessment</li>
+          <li>Personal development planning</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2>Induction Program</h2>
+        <h3>Week 1: Foundation</h3>
+        <ul>
+          <li>Nursery tour and facility orientation</li>
+          <li>Introduction to team members and management</li>
+          <li>Health and safety briefing</li>
+          <li>Child protection and safeguarding overview</li>
+          <li>Basic policies and procedures introduction</li>
+        </ul>
+
+        <h3>Week 2-4: Core Training</h3>
+        <ul>
+          <li>Detailed policy training sessions</li>
+          <li>Practical skills development</li>
+          <li>Shadowing experienced staff members</li>
+          <li>Observation and feedback sessions</li>
+          <li>Assessment of competency levels</li>
+        </ul>
+
+        <h3>Ongoing Support</h3>
+        <ul>
+          <li>Regular check-ins with line manager</li>
+          <li>Additional training as required</li>
+          <li>Performance reviews and feedback</li>
+          <li>Professional development opportunities</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2>Assessment and Sign-off</h2>
+        <ul>
+          <li>Competency assessment after 4 weeks</li>
+          <li>Policy knowledge test</li>
+          <li>Practical skills evaluation</li>
+          <li>Line manager sign-off for independent working</li>
+          <li>Probationary period completion</li>
+        </ul>
+      </div>
+
+      <div class="footer">
+        <div class="signature-block">
+          <table class="signature-table">
+            <tr>
+              <td>This policy was adopted by</td>
+              <td>Bright Kids Day Nursery Ltd/Bright Kids Hackney Ltd</td>
+            </tr>
+            <tr>
+              <td>Date adopted</td>
+              <td>[Date]</td>
+            </tr>
+            <tr>
+              <td>Date to be reviewed</td>
+              <td>[Date]</td>
+            </tr>
+            <tr>
+              <td>Signed</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Position</td>
+              <td></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="update-info">
+        Updated [Date]
+      </div>
+    </div>
+
+    <div class="tab-content" id="staff3">
+      <h1>Hours and Breaks Policy</h1>
+
+      <div class="header-info">
+        <strong>Bright Kids Day Nursery Ltd / Bright Kids Hackney Ltd</strong><br>
+        Adopted: [Date] | To be reviewed: [Date]
+      </div>
+
+      <div class="policy-section">
+        <h2>Working Hours</h2>
+        <h3>Standard Working Hours</h3>
+        <ul>
+          <li>Full-time staff: 40 hours per week</li>
+          <li>Part-time staff: As per contract agreement</li>
+          <li>Shift patterns: Early (7:00-15:00), Late (10:00-18:00), Full day (8:00-16:00)</li>
+          <li>Weekend work: As required for special events or cover</li>
+        </ul>
+
+        <h3>Flexible Working</h3>
+        <ul>
+          <li>Flexible start and finish times within core hours</li>
+          <li>Compressed hours arrangements</li>
+          <li>Job sharing opportunities</li>
+          <li>Remote working for administrative tasks where appropriate</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2>Break Entitlements</h2>
+        <h3>Rest Breaks</h3>
+        <ul>
+          <li>15-minute break for shifts over 4 hours</li>
+          <li>30-minute break for shifts over 6 hours</li>
+          <li>45-minute break for shifts over 8 hours</li>
+          <li>Breaks must be taken away from children</li>
+        </ul>
+
+        <h3>Lunch Breaks</h3>
+        <ul>
+          <li>30-minute unpaid lunch break for full-day shifts</li>
+          <li>Lunch break timing to be agreed with line manager</li>
+          <li>Cover arrangements during lunch breaks</li>
+          <li>Staff room facilities available</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2>Overtime and Additional Hours</h2>
+        <ul>
+          <li>Overtime rates: 1.5x normal rate for hours over 40 per week</li>
+          <li>Weekend rates: 1.5x normal rate</li>
+          <li>Bank holiday rates: 2x normal rate</li>
+          <li>Time off in lieu (TOIL) arrangements</li>
+          <li>Prior approval required for overtime</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2>Attendance and Punctuality</h2>
+        <ul>
+          <li>Arrive 15 minutes before shift start for handover</li>
+          <li>Clock in/out system for accurate time recording</li>
+          <li>Notification of lateness or absence as soon as possible</li>
+          <li>Return to work interviews after sickness absence</li>
+          <li>Disciplinary procedures for persistent lateness</li>
+        </ul>
+      </div>
+
+      <div class="footer">
+        <div class="signature-block">
+          <table class="signature-table">
+            <tr>
+              <td>This policy was adopted by</td>
+              <td>Bright Kids Day Nursery Ltd/Bright Kids Hackney Ltd</td>
+            </tr>
+            <tr>
+              <td>Date adopted</td>
+              <td>[Date]</td>
+            </tr>
+            <tr>
+              <td>Date to be reviewed</td>
+              <td>[Date]</td>
+            </tr>
+            <tr>
+              <td>Signed</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Position</td>
+              <td></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="update-info">
+        Updated [Date]
+      </div>
+    </div>
+
+    <div class="tab-content" id="staff4">
+      <h1>Holiday Entitlement and Application</h1>
+
+      <div class="header-info">
+        <strong>Bright Kids Day Nursery Ltd / Bright Kids Hackney Ltd</strong><br>
+        Adopted: [Date] | To be reviewed: [Date]
+      </div>
+
+      <div class="policy-section">
+        <h2>Holiday Entitlement</h2>
+        <h3>Annual Leave Allowance</h3>
+        <ul>
+          <li>Full-time staff: 28 days per year (including bank holidays)</li>
+          <li>Part-time staff: Pro-rata entitlement</li>
+          <li>Additional days for long service (5+ years)</li>
+          <li>Carry-over allowance: Up to 5 days to following year</li>
+        </ul>
+
+        <h3>Bank Holidays</h3>
+        <ul>
+          <li>8 bank holidays per year included in entitlement</li>
+          <li>Additional pay for working bank holidays</li>
+          <li>Alternative days off if bank holiday falls on non-working day</li>
+          <li>Christmas and New Year arrangements</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2>Holiday Application Process</h2>
+        <h3>Request Procedure</h3>
+        <ul>
+          <li>Submit holiday request form at least 4 weeks in advance</li>
+          <li>Peak periods require 8 weeks notice</li>
+          <li>Maximum 2 weeks consecutive leave during term time</li>
+          <li>Line manager approval required</li>
+        </ul>
+
+        <h3>Peak Periods and Restrictions</h3>
+        <ul>
+          <li>Summer holidays: Limited availability</li>
+          <li>Christmas period: Maximum 50% of staff on leave</li>
+          <li>Half-term breaks: First come, first served basis</li>
+          <li>Training days: No holiday requests accepted</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2>Emergency Leave and Special Circumstances</h2>
+        <h3>Emergency Leave</h3>
+        <ul>
+          <li>Bereavement leave: Up to 5 days paid leave</li>
+          <li>Emergency family situations: Unpaid leave</li>
+          <li>Medical appointments: Time off as required</li>
+          <li>Jury service: Paid leave with documentation</li>
+        </ul>
+
+        <h3>Maternity/Paternity Leave</h3>
+        <ul>
+          <li>Statutory maternity leave: 52 weeks</li>
+          <li>Maternity pay: As per statutory requirements</li>
+          <li>Paternity leave: 2 weeks paid leave</li>
+          <li>Shared parental leave: As per legislation</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2>Holiday Management</h2>
+        <ul>
+          <li>Holiday calendar maintained by management</li>
+          <li>Staff portal for holiday requests and balances</li>
+          <li>Regular updates on remaining entitlement</li>
+          <li>End-of-year holiday reconciliation</li>
+          <li>Payment in lieu for unused holiday (where applicable)</li>
+        </ul>
+      </div>
+
+      <div class="footer">
+        <div class="signature-block">
+          <table class="signature-table">
+            <tr>
+              <td>This policy was adopted by</td>
+              <td>Bright Kids Day Nursery Ltd/Bright Kids Hackney Ltd</td>
+            </tr>
+            <tr>
+              <td>Date adopted</td>
+              <td>[Date]</td>
+            </tr>
+            <tr>
+              <td>Date to be reviewed</td>
+              <td>[Date]</td>
+            </tr>
+            <tr>
+              <td>Signed</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Position</td>
+              <td></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="update-info">
+        Updated [Date]
+      </div>
+    </div>
+
+    <div class="tab-content" id="staff5">
+      <h1>Staff Portal</h1>
+
+      <div class="header-info">
+        <strong>Bright Kids Day Nursery Ltd / Bright Kids Hackney Ltd</strong><br>
+        Adopted: [Date] | To be reviewed: [Date]
+      </div>
+
+      <div class="policy-section">
+        <h2>Portal Overview</h2>
+        <p>The staff portal is our central digital platform for all staff-related information, resources, and communication. It provides secure access to personal information, policies, training materials, and administrative functions.</p>
+      </div>
+
+      <div class="policy-section">
+        <h2>Access and Login</h2>
+        <h3>Login Credentials</h3>
+        <ul>
+          <li>Unique username provided during induction</li>
+          <li>Secure password requirements</li>
+          <li>Two-factor authentication enabled</li>
+          <li>Password reset procedures</li>
+        </ul>
+
+        <h3>Access Levels</h3>
+        <ul>
+          <li>All staff: Basic access to personal information</li>
+          <li>Team leaders: Additional management functions</li>
+          <li>Management: Full administrative access</li>
+          <li>IT support: Technical administration rights</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2>Available Features</h2>
+        <h3>Personal Information</h3>
+        <ul>
+          <li>View and update personal details</li>
+          <li>Check holiday entitlement and balances</li>
+          <li>View payslips and tax documents</li>
+          <li>Update emergency contacts</li>
+        </ul>
+
+        <h3>Policies and Procedures</h3>
+        <ul>
+          <li>Access to all current policies</li>
+          <li>Policy updates and notifications</li>
+          <li>Training materials and resources</li>
+          <li>Compliance tracking and acknowledgments</li>
+        </ul>
+
+        <h3>Communication</h3>
+        <ul>
+          <li>Staff announcements and updates</li>
+          <li>Team messaging and collaboration tools</li>
+          <li>Meeting schedules and agendas</li>
+          <li>Feedback and suggestion forms</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2>Training and Development</h2>
+        <ul>
+          <li>Online training modules and assessments</li>
+          <li>Training records and certificates</li>
+          <li>Professional development opportunities</li>
+          <li>Performance review documentation</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2>Technical Support</h2>
+        <ul>
+          <li>IT helpdesk contact information</li>
+          <li>Common issues and troubleshooting guides</li>
+          <li>System maintenance notifications</li>
+          <li>Mobile app access and support</li>
+        </ul>
+      </div>
+
+      <div class="footer">
+        <div class="signature-block">
+          <table class="signature-table">
+            <tr>
+              <td>This policy was adopted by</td>
+              <td>Bright Kids Day Nursery Ltd/Bright Kids Hackney Ltd</td>
+            </tr>
+            <tr>
+              <td>Date adopted</td>
+              <td>[Date]</td>
+            </tr>
+            <tr>
+              <td>Date to be reviewed</td>
+              <td>[Date]</td>
+            </tr>
+            <tr>
+              <td>Signed</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Position</td>
+              <td></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="update-info">
+        Updated [Date]
+      </div>
+    </div>
+
+    <div class="tab-content" id="staff6">
+      <h1>Compulsory Monthly Staff Meetings</h1>
+
+      <div class="header-info">
+        <strong>Bright Kids Day Nursery Ltd / Bright Kids Hackney Ltd</strong><br>
+        Adopted: [Date] | To be reviewed: [Date]
+      </div>
+
+      <div class="policy-section">
+        <h2>Meeting Requirements</h2>
+        <p>All staff members are required to attend monthly staff meetings as part of their employment contract. These meetings are essential for maintaining communication, sharing updates, and ensuring consistent practice across the nursery.</p>
+      </div>
+
+      <div class="policy-section">
+        <h2>Meeting Schedule</h2>
+        <h3>Regular Schedule</h3>
+        <ul>
+          <li>First Monday of each month at 6:00 PM</li>
+          <li>Duration: 1-2 hours depending on agenda</li>
+          <li>Location: Nursery main hall or online platform</li>
+          <li>Alternative dates for bank holidays</li>
+        </ul>
+
+        <h3>Special Meetings</h3>
+        <ul>
+          <li>Emergency meetings as required</li>
+          <li>Training sessions and workshops</li>
+          <li>Policy update meetings</li>
+          <li>Team building activities</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2>Meeting Content</h2>
+        <h3>Regular Agenda Items</h3>
+        <ul>
+          <li>Previous month's performance review</li>
+          <li>Policy updates and changes</li>
+          <li>Training announcements and requirements</li>
+          <li>Health and safety updates</li>
+          <li>Staff feedback and suggestions</li>
+        </ul>
+
+        <h3>Additional Topics</h3>
+        <ul>
+          <li>New staff introductions</li>
+          <li>Parent feedback and concerns</li>
+          <li>Regulatory updates and compliance</li>
+          <li>Upcoming events and activities</li>
+          <li>Resource and equipment updates</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2>Attendance Requirements</h2>
+        <h3>Mandatory Attendance</h3>
+        <ul>
+          <li>All full-time and part-time staff must attend</li>
+          <li>Absence requires prior approval from line manager</li>
+          <li>Medical certificates required for illness absence</li>
+          <li>Make-up sessions for missed meetings</li>
+        </ul>
+
+        <h3>Documentation</h3>
+        <ul>
+          <li>Attendance register maintained</li>
+          <li>Minutes recorded and distributed</li>
+          <li>Action points assigned and tracked</li>
+          <li>Follow-up on previous meeting items</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2>Consequences of Non-Attendance</h2>
+        <ul>
+          <li>First absence: Verbal warning and catch-up session</li>
+          <li>Repeated absences: Written warning</li>
+          <li>Persistent non-attendance: Disciplinary action</li>
+          <li>Impact on performance reviews and promotions</li>
+        </ul>
+      </div>
+
+      <div class="footer">
+        <div class="signature-block">
+          <table class="signature-table">
+            <tr>
+              <td>This policy was adopted by</td>
+              <td>Bright Kids Day Nursery Ltd/Bright Kids Hackney Ltd</td>
+            </tr>
+            <tr>
+              <td>Date adopted</td>
+              <td>[Date]</td>
+            </tr>
+            <tr>
+              <td>Date to be reviewed</td>
+              <td>[Date]</td>
+            </tr>
+            <tr>
+              <td>Signed</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Position</td>
+              <td></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="update-info">
+        Updated [Date]
+      </div>
+    </div>
+
+    <div class="tab-content" id="staff7">
+      <h1>Line Management and Staffing Structure</h1>
+
+      <div class="header-info">
+        <strong>Bright Kids Day Nursery Ltd / Bright Kids Hackney Ltd</strong><br>
+        Adopted: [Date] | To be reviewed: [Date]
+      </div>
+
+      <div class="policy-section">
+        <h2>Organizational Structure</h2>
+        <h3>Management Hierarchy</h3>
+        <ul>
+          <li>Nursery Manager: Overall responsibility and strategic direction</li>
+          <li>Deputy Manager: Operational management and staff support</li>
+          <li>Team Leaders: Room management and day-to-day supervision</li>
+          <li>Senior Practitioners: Advanced practice and mentoring</li>
+          <li>Practitioners: Core childcare delivery</li>
+          <li>Support Staff: Administrative and maintenance support</li>
+        </ul>
+
+        <h3>Reporting Structure</h3>
+        <ul>
+          <li>Practitioners report to Team Leaders</li>
+          <li>Team Leaders report to Deputy Manager</li>
+          <li>Deputy Manager reports to Nursery Manager</li>
+          <li>Nursery Manager reports to Directors</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2>Team Leader Role</h2>
+        <h3>Key Responsibilities</h3>
+        <ul>
+          <li>Daily room management and staff coordination</li>
+          <li>Staff supervision and performance management</li>
+          <li>Parent communication and relationship building</li>
+          <li>Curriculum planning and implementation</li>
+          <li>Health and safety compliance in assigned areas</li>
+        </ul>
+
+        <h3>Leadership Qualities</h3>
+        <ul>
+          <li>Strong communication and interpersonal skills</li>
+          <li>Experience in early years education</li>
+          <li>Leadership and team management abilities</li>
+          <li>Problem-solving and decision-making skills</li>
+          <li>Commitment to continuous professional development</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2>Staff Development and Progression</h2>
+        <h3>Career Pathways</h3>
+        <ul>
+          <li>Practitioner to Senior Practitioner progression</li>
+          <li>Senior Practitioner to Team Leader promotion</li>
+          <li>Team Leader to Deputy Manager advancement</li>
+          <li>Specialist roles and additional responsibilities</li>
+        </ul>
+
+        <h3>Performance Management</h3>
+        <ul>
+          <li>Regular one-to-one meetings with line managers</li>
+          <li>Annual performance reviews and appraisals</li>
+          <li>Personal development planning</li>
+          <li>Training needs identification and support</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2>Communication and Support</h2>
+        <ul>
+          <li>Open-door policy for staff concerns</li>
+          <li>Regular team meetings and briefings</li>
+          <li>Mentoring and buddy systems</li>
+          <li>Staff feedback mechanisms</li>
+          <li>Conflict resolution procedures</li>
+        </ul>
+      </div>
+
+      <div class="footer">
+        <div class="signature-block">
+          <table class="signature-table">
+            <tr>
+              <td>This policy was adopted by</td>
+              <td>Bright Kids Day Nursery Ltd/Bright Kids Hackney Ltd</td>
+            </tr>
+            <tr>
+              <td>Date adopted</td>
+              <td>[Date]</td>
+            </tr>
+            <tr>
+              <td>Date to be reviewed</td>
+              <td>[Date]</td>
+            </tr>
+            <tr>
+              <td>Signed</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Position</td>
+              <td></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="update-info">
+        Updated [Date]
+      </div>
+    </div>
+
+    <div class="tab-content" id="staff8">
+      <h1>WhatsApp Groups Policy</h1>
+
+      <div class="header-info">
+        <strong>Bright Kids Day Nursery Ltd / Bright Kids Hackney Ltd</strong><br>
+        Adopted: [Date] | To be reviewed: [Date]
+      </div>
+
+      <div class="policy-section">
+        <h2>Purpose and Guidelines</h2>
+        <p>WhatsApp groups are used for efficient communication and coordination among staff members. This policy ensures professional and appropriate use of these communication channels while maintaining confidentiality and respect.</p>
+      </div>
+
+      <div class="policy-section">
+        <h2>Group Structure</h2>
+        <h3>Official Groups</h3>
+        <ul>
+          <li>All Staff Group: General announcements and updates</li>
+          <li>Management Group: Leadership communication</li>
+          <li>Team Leader Group: Operational coordination</li>
+          <li>Room Groups: Specific room-based communication</li>
+          <li>Training Group: Professional development updates</li>
+        </ul>
+
+        <h3>Group Administration</h3>
+        <ul>
+          <li>Group admins: Management and Team Leaders only</li>
+          <li>Member approval required for new additions</li>
+          <li>Regular review of group membership</li>
+          <li>Clear group descriptions and purposes</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2>Communication Standards</h2>
+        <h3>Appropriate Content</h3>
+        <ul>
+          <li>Work-related announcements and updates</li>
+          <li>Shift changes and cover requests</li>
+          <li>Training reminders and professional development</li>
+          <li>Team building and social events</li>
+          <li>Emergency communications and urgent matters</li>
+        </ul>
+
+        <h3>Inappropriate Content</h3>
+        <ul>
+          <li>Personal conversations unrelated to work</li>
+          <li>Confidential information about children or families</li>
+          <li>Inappropriate language or content</li>
+          <li>Gossip or negative comments about colleagues</li>
+          <li>Political or controversial discussions</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2>Professional Conduct</h2>
+        <h3>Communication Etiquette</h3>
+        <ul>
+          <li>Use professional language and tone</li>
+          <li>Be respectful and considerate of others</li>
+          <li>Keep messages concise and relevant</li>
+          <li>Use appropriate timing for non-urgent messages</li>
+          <li>Respond promptly to work-related queries</li>
+        </ul>
+
+        <h3>Privacy and Confidentiality</h3>
+        <ul>
+          <li>Never share confidential information</li>
+          <li>Respect colleagues' privacy</li>
+          <li>Do not screenshot or forward messages inappropriately</li>
+          <li>Report any breaches of confidentiality</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2>Monitoring and Compliance</h2>
+        <ul>
+          <li>Regular monitoring of group content</li>
+          <li>Addressing inappropriate behavior promptly</li>
+          <li>Training on appropriate use of communication tools</li>
+          <li>Disciplinary action for policy violations</li>
+          <li>Regular review and update of group guidelines</li>
+        </ul>
+      </div>
+
+      <div class="footer">
+        <div class="signature-block">
+          <table class="signature-table">
+            <tr>
+              <td>This policy was adopted by</td>
+              <td>Bright Kids Day Nursery Ltd/Bright Kids Hackney Ltd</td>
+            </tr>
+            <tr>
+              <td>Date adopted</td>
+              <td>[Date]</td>
+            </tr>
+            <tr>
+              <td>Date to be reviewed</td>
+              <td>[Date]</td>
+            </tr>
+            <tr>
+              <td>Signed</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Position</td>
+              <td></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="update-info">
+        Updated [Date]
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    const tabs = document.querySelectorAll('.tab');
+    const contents = document.querySelectorAll('.tab-content');
+    const tabsContainer = document.getElementById('tabs');
+    const leftBtn = document.getElementById('leftBtn');
+    const rightBtn = document.getElementById('rightBtn');
+
+    // Function to convert tab text to URL-friendly hash
+    function textToHash(text) {
+      return text
+        .toLowerCase()
+        .replace(/[^a-z0-9\s]/g, '') // Remove special characters except spaces
+        .replace(/\s+/g, '') // Remove spaces
+        .trim();
+    }
+
+    // Function to switch to a specific tab
+    function switchToTab(tabElement) {
+      tabs.forEach(t => t.classList.remove('active'));
+      contents.forEach(c => c.classList.remove('active'));
+
+      tabElement.classList.add('active');
+      document.getElementById(tabElement.dataset.tab).classList.add('active');
+
+      // Scroll the active tab into view
+      tabElement.scrollIntoView({behavior: 'smooth', inline: 'center'});
+    }
+
+    // Tab switching
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        // Create URL-friendly hash from tab text
+        const tabText = tab.textContent.trim();
+        const hash = textToHash(tabText);
+        
+        // Update URL hash
+        window.location.hash = hash;
+        
+        // Switch to the tab
+        switchToTab(tab);
+      });
+    });
+
+    // Function to handle URL hash changes
+    function handleHashChange() {
+      const hash = window.location.hash.substring(1); // Remove the # symbol
+      if (hash) {
+        // Find tab by matching the hash with the tab text
+        let targetTab = null;
+        tabs.forEach(tab => {
+          const tabText = tab.textContent.trim();
+          const tabHash = textToHash(tabText);
+          if (tabHash === hash) {
+            targetTab = tab;
+          }
+        });
+        
+        if (targetTab) {
+          switchToTab(targetTab);
+        } else {
+          // If no matching tab found, activate the first tab
+          switchToTab(tabs[0]);
+        }
+      } else {
+        // If no hash, activate the first tab
+        switchToTab(tabs[0]);
+      }
+    }
+
+    // Handle initial page load
+    handleHashChange();
+
+    // Listen for hash changes (back/forward buttons)
+    window.addEventListener('hashchange', handleHashChange);
+
+    // Scroll buttons
+    leftBtn.addEventListener('click', () => {
+      tabsContainer.scrollBy({left: -200, behavior: 'smooth'});
+    });
+
+    rightBtn.addEventListener('click', () => {
+      tabsContainer.scrollBy({left: 200, behavior: 'smooth'});
+    });
+  </script>
+</body>
+
+</html>
