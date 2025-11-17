@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Role of the Key Person and Settling-in</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    header img {
+      max-width: 180px;
+      height: auto;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    /* Tab Navigation Wrapper */
+    .tabs-wrapper {
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+
+    .header-info {
+      line-height: 24px;
+    }
+
+    .scroll-btn {
+      background: #fff;
+      border: 1px solid #ddd;
+      padding: 6px 10px;
+      cursor: pointer;
+      font-size: 18px;
+      border-radius: 4px;
+      margin: 0 5px;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+      transition: 0.3s;
+    }
+
+    .scroll-btn:hover {
+      background: #f0f0f0;
+    }
+
+    .tabs {
+      display: flex;
+      overflow-x: auto;
+      white-space: nowrap;
+      border-bottom: 2px solid #ddd;
+      scrollbar-width: none;
+      /* Hide scrollbar Firefox */
+      -ms-overflow-style: none;
+      /* IE */
+      flex: 1;
+    }
+
+    .tabs::-webkit-scrollbar {
+      display: none;
+      /* Hide scrollbar Chrome/Safari */
+    }
+
+    .tab {
+      flex: 0 0 auto;
+      padding: 10px 20px;
+      cursor: pointer;
+      border: none;
+      background: transparent;
+      font-size: 15px;
+      transition: 0.3s;
+    }
+
+    .tab:hover {
+      background: #f0f0f0;
+    }
+
+    .tab.active {
+      border-bottom: 3px solid #007bff;
+      font-weight: bold;
+      color: #007bff;
+    }
+
+    /* Tab Content */
+    .tab-content {
+      display: none;
+      padding: 20px;
+      background: #fff;
+      margin-top: 10px;
+      border-radius: 6px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    li {
+      margin: 10px 0px;
+      line-height: 25px;
+    }
+
+    .horizontal {
+      display: flex;
+      gap: 50px;
+    }
+
+    p {
+      line-height: 27px;
+    }
+
+    p.text-underline {
+      text-decoration: underline;
+      line-height: 19px;
+    }
+
+    .redborder {
+      padding: 20px;
+      color: red;
+      border: 1px solid red;
+      border-radius: 20px;
+    }
+
+    .section-title {
+      font-weight: bold;
+      margin-top: 25px;
+      text-decoration: underline;
+    }
+
+    .policy-section {
+      margin-top: 25px;
+      margin-bottom: 25px;
+      padding: 20px;
+      background-color: #f8f9fa;
+      border-radius: 8px;
+      border-left: 4px solid #3498db;
+    }
+
+    .procedures-section {
+      margin-top: 30px;
+      padding: 20px;
+      background-color: #e8f4fc;
+      border-radius: 8px;
+    }
+
+    .highlight {
+      background-color: #fffde7;
+      padding: 2px 5px;
+      border-radius: 3px;
+      font-weight: bold;
+    }
+
+    .page-break {
+      margin-top: 40px;
+      border-top: 1px dashed #ccc;
+      padding-top: 30px;
+    }
+
+    .review-info {
+      margin-top: 40px;
+      padding: 20px;
+      background-color: #f1f8e9;
+      border-radius: 8px;
+      border-left: 4px solid #7cb342;
+    }
+
+    .references {
+      margin-top: 30px;
+      padding: 20px;
+      background-color: #f5f5f5;
+      border-radius: 8px;
+    }
+
+    .policy-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .provider-name {
+      font-weight: bold;
+      font-size: 1.2em;
+      color: #2c3e50;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    table,
+    th,
+    td {
+      border: 1px solid #333;
+    }
+
+    th,
+    td {
+      padding: 10px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    .footer {
+      margin-top: 40px;
+      border-top: 1px solid #999;
+      padding-top: 15px;
+      font-size: 0.9em;
+      color: #444;
+    }
+
+    .signature-block {
+      margin-top: 30px;
+    }
+
+    .signature-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .signature-table td {
+      padding: 10px;
+      border: 1px solid #ccc;
+      vertical-align: top;
+    }
+
+    .signature-table td:first-child {
+      background-color: #f9f9f9;
+      font-weight: bold;
+      width: 30%;
+    }
+
+    .update-info {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #fff3e0;
+      border-radius: 5px;
+      text-align: center;
+      font-style: italic;
+    }
+
+    @media (max-width: 768px) {
+      .tab {
+        font-size: 14px;
+        padding: 8px 14px;
+      }
+
+      header img {
+        max-width: 140px;
+      }
+
+      .scroll-btn {
+        font-size: 16px;
+        padding: 4px 8px;
+      }
+
+      .container {
+        padding: 10px;
+      }
+
+      .tab-content {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <img
+        src="https://ik.imagekit.io/Brightkidsdaynursery/WhatsApp%20Image%202025-09-19%20at%2018.12.08.jpeg?updatedAt=1758376250662"
+        alt="Company Logo">
+    </header>
+
+    <h1>4.1 The Role of the Key Person and Settling-in</h1>
+
+    <!-- Tabs with Arrows -->
+    <div class="tabs-wrapper">
+      <button class="scroll-btn" id="leftBtn">&#9664;</button>
+      <div class="tabs" id="tabs">
+        <button class="tab active" data-tab="safeguarding">Safeguarding Requirement</button>
+        <button class="tab" data-tab="policy">Policy Statement</button>
+        <button class="tab" data-tab="procedures">Procedures</button>
+        <button class="tab" data-tab="settling">Settling-in</button>
+        <button class="tab" data-tab="progresscheck">Progress Check at Age Two</button>
+        <button class="tab" data-tab="adoption">Policy Adoption</button>
+      </div>
+      <button class="scroll-btn" id="rightBtn">&#9654;</button>
+    </div>
+
+    <!-- Tab Contents -->
+    <div class="tab-content active" id="safeguarding">
+      <h2>Safeguarding and Welfare Requirement: Key person</h2>
+
+      <div class="header-info">
+        <strong>Bright Kids Day Nursery Ltd / Bright Kids Hackney Ltd</strong><br>
+        Adopted: 25/08/2025 | To be reviewed: 25/08/2026
+      </div>
+
+      <div class="policy-section">
+        <h3>Key Person Requirement</h3>
+        <p>Each child must be assigned a key person. Their role is to help ensure that every child's care is tailored to meet their individual needs, to help the child become familiar with the setting, offer a settled relationship for the child and build a relationship with their parents.</p>
+      </div>
+    </div>
+
+    <div class="tab-content" id="policy">
+      <h2>Policy Statement</h2>
+
+      <div class="header-info">
+        <strong>Bright Kids Day Nursery Ltd / Bright Kids Hackney Ltd</strong><br>
+        Adopted: 25/08/2025 | To be reviewed: 25/08/2026
+      </div>
+
+      <div class="policy-section">
+        <p>We believe that children settle best when they have a key person to relate to, who knows them and their parents well, and who can meet their individual needs. Research shows that a key person approach benefits the child, the parents, the staff and the setting by providing secure relationships in which children thrive, parents have confidence, staff are committed and the setting is a happy and dedicated place to attend or work in.</p>
+
+        <p>We want children to feel safe, stimulated and happy in the setting and to feel secure and comfortable with staff. We also want parents to have confidence in both their children's well-being and their role as active partners with the setting.</p>
+
+        <p>We aim to make the setting a welcoming place where children settle quickly and easily because consideration has been given to the individual needs and circumstances of children and their families.</p>
+
+        <p>The key person role is set out in the Safeguarding and Welfare Requirements of the Early Years Foundation Stage. Each setting must assign a key person for each child at the point of entry to the setting.</p>
+
+        <p>The procedures set out a model for developing a key person approach that promotes effective and positive relationships for children who are in settings.</p>
+      </div>
+    </div>
+
+    <div class="tab-content" id="procedures">
+      <h2>Procedures</h2>
+
+      <div class="header-info">
+        <strong>Bright Kids Day Nursery Ltd / Bright Kids Hackney Ltd</strong><br>
+        Adopted: 25/08/2025 | To be reviewed: 25/08/2026
+      </div>
+
+      <div class="policy-section">
+        <h3>Key Person Responsibilities</h3>
+        <ul>
+          <li>We allocate a key person before the child starts.</li>
+          <li>The key person is responsible for the induction of the family and for settling the child into our setting.</li>
+          <li>The key person offers unconditional regard for the child and is non-judgemental.</li>
+          <li>The key person works with the parent to plan and deliver a personalised plan for the child's well-being, care and leaning.</li>
+          <li>The key person acts as the key contact for the parents and has links with other carers involved with the child, such as a childminder, and co-ordinates the sharing of appropriate information about the child's development with those carers.</li>
+          <li>The key person is responsible for developmental records and for sharing information on a regular basis with the child's parents to keep those records up-to-date, reflecting the full picture of the child in our setting and at home.</li>
+          <li>The key person encourages positive relationships between children in her/his key group, spending time with them as a group each day.</li>
+          <li>We provide a back up buddy key person for every child so the child and the parents have a key contact in the absence of the child's key person.</li>
+          <li>We promote the role of the key person as the child's primary carer in our setting, and as the basis for establishing relationships with other staff and children.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tab-content" id="settling">
+      <h2>Settling-in</h2>
+
+      <div class="header-info">
+        <strong>Bright Kids Day Nursery Ltd / Bright Kids Hackney Ltd</strong><br>
+        Adopted: 25/08/2025 | To be reviewed: 25/08/2026
+      </div>
+
+      <div class="policy-section">
+        <h3>Pre-Start Procedures</h3>
+        <ul>
+          <li>Before a child starts to attend the setting, we use a variety of ways to provide his/her parents with information. These include written information (including our prospectus and policies), displays about activities available within the setting, information days and evenings and individual meetings with parents.</li>
+          <li>Before a child is enrolled, we provide opportunities for the child and his/her parents to visit the setting.</li>
+          <li>We allocate a key person to each child and his/her family before she/he starts to attend; the key person welcomes and looks after the child and his/her parents at the child's first session and during the settling-in process.</li>
+          <li>We will fill in our 'All about me' forms with the parent to find out about the child's starting point and link to development matters.</li>
+          <li>We may offer a home visit by the person who will be the child's key person, to ensure all relevant information about the child can be made known.</li>
+          <li>We use pre-start visits and the first session at which a child attends to explain and complete, with his/her parents, the child's registration records.</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h3>Settling-in Process</h3>
+        <ul>
+          <li>When a child starts to attend, we explain the process of settling-in with his/her parents and jointly decide on the best way to help the child to settle into the setting.</li>
+          <li>We have an expectation that the parent, carer or close relative, will stay for most of the session during the first week, gradually taking time away from their child, increasing this as and when the child is able to cope.</li>
+          <li>Younger children will take longer to settle in, as will children who have not previously spent time away from home. Children who have had a period of absence may also need their parent to be on hand to re-settle them.</li>
+          <li>We judge a child to be settled when they have formed a relationship with their key person; for example, the child looks for the key person when he/she arrives, goes to them for comfort and seems pleased to be with them. The child is also familiar with where things are and is pleased to see other children and participate in activities.</li>
+          <li>When parents leave, we ask them to say goodbye to their child and explain that they will be coming back, and when.</li>
+          <li>We recognise that some children will settle more readily than others but that some children who appear to settle rapidly are not ready to be left. We expect that the parent will honour the commitment to stay for at least the first week, or possibly longer, until their child can stay happily without them.</li>
+          <li>We do not believe that leaving a child to cry will help them to settle any quicker. We believe that a child's distress will prevent them from learning and gaining the best from the setting.</li>
+          <li>We reserve the right not to accept a child into the setting without a parent or carer if the child finds it distressing to be left. This is especially the case with very young children.</li>
+          <li>Within the first four to six weeks of starting we discuss and work with the child's parents to begin to create their child's record of achievement.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tab-content" id="progresscheck">
+      <h2>The Progress Check at Age Two</h2>
+
+      <div class="header-info">
+        <strong>Bright Kids Day Nursery Ltd / Bright Kids Hackney Ltd</strong><br>
+        Adopted: 25/08/2025 | To be reviewed: 25/08/2026
+      </div>
+
+      <div class="policy-section">
+        <h3>Progress Check Procedures</h3>
+        <ul>
+          <li>The key person carries out the progress check at age two in accordance with any local procedures that are in place and referring to the supporting guidance to the EYFS A Know How Guide: The EYFS progress check at age two and forms from our Local Authority.</li>
+          <li>The progress checks will be done in partnership with the Parents/Carers.</li>
+          <li>The progress check aims to review the child's development and ensures that parents have a clear picture of their child's development.</li>
+          <li>Within the progress check, the key person will note areas where the child is progressing well and identify areas where progress is less than expected.</li>
+          <li>The progress check will describe the actions that will be taken by the setting to address any developmental concerns (including working with other professionals where appropriate) as agreed with the parent(s).</li>
+          <li>The key person will plan activities to meet the child's needs within the setting and will support parents to understand the child's needs in order to enhance their development at home.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tab-content" id="adoption">
+      <h2>Policy Adoption and Review</h2>
+
+      <div class="header-info">
+        <strong>Bright Kids Day Nursery Ltd / Bright Kids Hackney Ltd</strong>
+      </div>
+
+      <div class="signature-block">
+        <table class="signature-table">
+          <tr>
+            <td>This policy was adopted at a meeting of</td>
+            <td>Bright Kids Nursery Ltd/Bright Kids Hackney Ltd (name of provider)</td>
+          </tr>
+          <tr>
+            <td>Held on</td>
+            <td>25/08/2025 (date)</td>
+          </tr>
+          <tr>
+            <td>Date to be reviewed</td>
+            <td>25/08/2026 (date)</td>
+          </tr>
+          <tr>
+            <td>Signed on behalf of the Manager</td>
+            <td>Bright Kids Team</td>
+          </tr>
+          <tr>
+            <td>Name of signatory</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td>Role of signatory (owner)</td>
+            <td>&nbsp;</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="references">
+        <h3>Other useful publications</h3>
+        <ul>
+          <li>Statutory Framework for the Early Years Foundation Stage (2012) With supporting documentation</li>
+        </ul>
+        <div class="update-info">
+          Updated October 2023
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    const tabs = document.querySelectorAll('.tab');
+    const contents = document.querySelectorAll('.tab-content');
+    const tabsContainer = document.getElementById('tabs');
+    const leftBtn = document.getElementById('leftBtn');
+    const rightBtn = document.getElementById('rightBtn');
+
+    // Function to convert tab text to URL-friendly hash
+    function textToHash(text) {
+      return text
+        .toLowerCase()
+        .replace(/[^a-z0-9\s]/g, '')
+        .replace(/\s+/g, '')
+        .trim();
+    }
+
+    function switchToTab(tabElement) {
+      tabs.forEach(t => t.classList.remove('active'));
+      contents.forEach(c => c.classList.remove('active'));
+      tabElement.classList.add('active');
+      document.getElementById(tabElement.dataset.tab).classList.add('active');
+      tabElement.scrollIntoView({behavior: 'smooth', inline: 'center'});
+    }
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const tabText = tab.textContent.trim();
+        const hash = textToHash(tabText);
+        window.location.hash = hash;
+        switchToTab(tab);
+      });
+    });
+
+    function handleHashChange() {
+      const hash = window.location.hash.substring(1);
+      if (hash) {
+        let targetTab = null;
+        tabs.forEach(tab => {
+          const tabText = tab.textContent.trim();
+          const tabHash = textToHash(tabText);
+          if (tabHash === hash) targetTab = tab;
+        });
+        if (targetTab) {
+          switchToTab(targetTab);
+        } else {
+          switchToTab(tabs[0]);
+        }
+      } else {
+        switchToTab(tabs[0]);
+      }
+    }
+
+    handleHashChange();
+    window.addEventListener('hashchange', handleHashChange);
+
+    leftBtn.addEventListener('click', () => {
+      tabsContainer.scrollBy({left: -200, behavior: 'smooth'});
+    });
+
+    rightBtn.addEventListener('click', () => {
+      tabsContainer.scrollBy({left: 200, behavior: 'smooth'});
+    });
+  </script>
+</body>
+
+</html>
+
